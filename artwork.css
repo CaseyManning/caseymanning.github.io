@@ -15,12 +15,13 @@
 }
 
 h1 {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
 
 }
 
 p {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
+    color: #222222
 }
 
 .column img {
@@ -30,8 +31,6 @@ p {
 }
 
 .top {
-    /* width: 100%;
-    height: 500px; */
     background: #FFFFFF;
     position: absolute;
     top: 0px;
@@ -39,6 +38,15 @@ p {
     right: 0px;
     border-bottom: 2px solid lightgray;
 }
+
+.bottom {
+    background: #FFFFFF;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    border-bottom: 2px solid lightgray;
+}
+
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
