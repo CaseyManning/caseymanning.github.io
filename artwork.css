@@ -44,10 +44,9 @@ a {
 
 .bottom {
     background: #FFFFFF;
-    position: fixed;
+    position: absolute;
     left: 0px;
     right: 0px;
-    bottom: 0px;
     border-top: 2px solid lightgray;
 }
 
