@@ -23,6 +23,9 @@ p {
     font-family: "Helvetica Neue", sans-serif;
     color: #222222
 }
+a {
+    font-family: "Helvetica Neue", sans-serif;
+}
 
 .column img {
     margin-top: 50px;
@@ -41,10 +44,11 @@ p {
 
 .bottom {
     background: #FFFFFF;
-    position: absolute;
+    position: fixed;
     left: 0px;
     right: 0px;
-    border-bottom: 2px solid lightgray;
+    bottom: 0px;
+    border-top: 2px solid lightgray;
 }
 
 
