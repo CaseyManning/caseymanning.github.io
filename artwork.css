@@ -16,7 +16,7 @@
 
 h1 {
     font-family: "Open Sans", sans-serif;
-    
+
 }
 
 p {
@@ -37,7 +37,7 @@ p {
     top: 0px;
     left: 0px;
     right: 0px;
-    border-bottom: 1px solid grey;
+    border-bottom: 2px solid lightgray;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
