@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="index.css" />
-
-<body bgcolor="#EEEEEE">
+<script src="index.js"></script>
+<body bgcolor="#357bbd">
     <center>
         <div class="top">
             <br>
@@ -22,15 +22,38 @@
             </p>
         </div>
         <br>
-        <div class="card" onclick="location.href='https://itunes.apple.com/us/app/amanu/id1142733267'">
+        <div class="card" onclick="expandProjects()" id="projects">
             <p>
+                <b>Projects</b>
+            </p>
+        </div>
+        <div class="childcard"">
+            <br>
+            <br>
+            <p class="projectItem" onclick="location.href='https://itunes.apple.com/us/app/amanu/id1142733267'">
                 <b>Amanu: iOS Puzzle Game</b>
             </p>
+            <hr style="width:40%">
+            <p class="projectItem" onclick="location.href='https://playground.global/playgrams/scrambld-high-school-summer-intern-2019'">
+                <b>Automatic Omelette Cooking at Playground Global</b>
+            </p>
+            <hr style="width:40%">
+
+            <p class="projectItem" onclick="location.href='https://github.com/RoboticsTeam4904/ControlLoops'">
+                <b>FRC Robotics PID Visualizer & Auto-tuner</b>
+            </p>
+            <br>   
         </div>
         <br>
         <div class="card" onclick="location.href='https://github.com/caseymanning'">
             <p>
                 <b>Github Profile</b>
+            </p>
+        </div>
+        <br>
+        <div class="card" onclick="location.href='https://www.linkedin.com/in/caseytmanning/'">
+            <p>
+                <b>LinkedIn</b>
             </p>
         </div>
     </center>
