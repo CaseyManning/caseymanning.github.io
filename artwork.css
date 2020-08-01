@@ -39,7 +39,7 @@ a {
     top: 0px;
     left: 0px;
     right: 0px;
-    border-bottom: 2px solid lightgray;
+    border-bottom: 3px solid #444444;
 }
 
 .bottom {
@@ -65,4 +65,8 @@ a {
         flex: 100%;
         max-width: 100%;
     }
+}
+
+img {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.5);
 }
