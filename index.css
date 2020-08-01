@@ -15,9 +15,9 @@ a {
 
 .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
     transition: 0.3s;
-    background-color: #FFFFFF;
+    background-color: #eeeeee;
     width:50%;
     padding: 15px;
     border-radius: 5px;
@@ -64,10 +64,10 @@ a {
   }
 
 .top {
-    background: #FFFFFF;
+    background: #eeeeee;
     position: absolute;
     top: 0px;
     left: 0px;
     right: 0px;
-    border-bottom: 2px solid lightgray;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
 }
