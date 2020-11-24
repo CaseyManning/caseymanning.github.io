@@ -20,11 +20,9 @@ function expandAmanu() {
 }
 
 function artTransition() {
-  // document.getElementsByClassName('top')[0].setAttribute('style', 'padding-top: 1400px !important;');
-  // document.getElementsByClassName('top')[0].setAttribute('style', 'bottom: 0; clip-path: polygon(0 0, /* left top */ 100% 0, /* right top */ 100vw 100vh, /* right bottom */ 0 100vh /* left bottom */);');
-  document.getElementsByClassName('top')[0].setAttribute('style', 'padding-top: 100%; clip-path: polygon(0 0, /* left top */ 100% 0, /* right top */ 100vw 100vh, /* right bottom */ 0 100vh /* left bottom */);');
-  setTimeout(function() {location.href='https://caseymanning.github.io/artwork#fade';}, 400)
-
+  //document.getElementsByClassName('top')[0].setAttribute('style', 'padding-top: 100%; clip-path: polygon(0 0, /* left top */ 100% 0, /* right top */ 100vw 100vh, /* right bottom */ 0 100vh /* left bottom */);');
+  // setTimeout(function() {location.href='https://caseymanning.github.io/artwork#fade';}, 400)
+  location.href='https://caseymanning.github.io/artwork';
 }
 
 function saveResume() {
