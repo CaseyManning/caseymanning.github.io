@@ -31,6 +31,7 @@ a {
     margin-top: 50px;
     vertical-align: middle;
     width: 100%;
+    cursor: pointer;
 }
 
 .top {
@@ -68,6 +69,7 @@ img {
     height: 100%;
     background-color: black;
     opacity: 80%;
+    cursor: pointer;
 }
 
 #expanded {
