@@ -1,7 +1,10 @@
-function func() {
-    var images = document.getElementsByTagName('img');
+function unExpand() {
+    document.getElementById("overlay").hidden = true;
+    document.getElementById("expanded").hidden = true;
+}
 
-    for (let i = 0; i < images.length; i++) {
-        const image = array[i];
-    }
+function expand(imageSrc) {
+    document.getElementById("overlay").hidden = false;
+    document.getElementById("expanded").hidden = false;
+    document.getElementById("expanded").src=imageSrc;
 }
