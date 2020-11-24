@@ -17,16 +17,15 @@ a {
   margin-top: 100px;
   transition: margin ease 1s;
 }
-
+/* 
 body {
-  /* overflow: hidden; */
   background-color: #222222;
   transition: ease-in 1s !important;
   margin: auto;
   position: fixed;
   width: 100%;
   height: 100%;
-}
+} */
 
 .column {
   flex: 25%;
@@ -143,4 +142,18 @@ body {
   );
   /* max-height: 100% ; */
   z-index: 3;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .column {
+      flex: 100%;
+      max-width: 100%;
+  }
+  /* #overlay {
+      display: none;
+  }
+  #expanded {
+      display: none;
+  } */
 }
