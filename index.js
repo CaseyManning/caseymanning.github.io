@@ -1,4 +1,5 @@
 function expandPlayground() {
+  document.getElementById("amanu").nextElementSibling.style.maxHeight = null;;
     var projects = document.getElementById("omelettes");
     var content = projects.nextElementSibling;
     if (content.style.maxHeight){
@@ -10,6 +11,7 @@ function expandPlayground() {
 }
 
 function expandAmanu() {
+  document.getElementById("omelettes").nextElementSibling.style.maxHeight = null;;
   var projects = document.getElementById("amanu");
   var content = projects.nextElementSibling;
   if (content.style.maxHeight){

@@ -32,6 +32,14 @@ body {
   max-width: 100%;
 }
 
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .column {
+      flex: 100%;
+      max-width: 100%;
+  }
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -142,18 +150,4 @@ body {
   );
   /* max-height: 100% ; */
   z-index: 3;
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .column {
-      flex: 100%;
-      max-width: 100%;
-  }
-  /* #overlay {
-      display: none;
-  }
-  #expanded {
-      display: none;
-  } */
 }
