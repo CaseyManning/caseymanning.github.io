@@ -60,6 +60,12 @@ a {
         flex: 100%;
         max-width: 100%;
     }
+    #overlay {
+        display: none;
+    }
+    #expanded {
+        display: none;
+    }
 }
 
 img {
