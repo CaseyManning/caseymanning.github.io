@@ -9,13 +9,29 @@ function slide(elem) {
     }
 }
 
+function collapse() {
+    document.getElementById('ringInner').setAttribute('style', 'width: 0; height: 0;');
+    setTimeout(function() {
+        document.getElementById('ringInner2').setAttribute('style', 'width: 0; height: 0;');
+        document.getElementById('leftColumn').setAttribute('style', 'margin-left: -400px');
+        document.getElementById('rightColumn').setAttribute('style', 'margin-right: -400px');
+        setTimeout(function() {
+            document.getElementById('ringOuter').setAttribute('style', 'width: 0; height: 0;');
+            setTimeout(function() {
+                document.getElementById('afterLogo').setAttribute('style', 'visibility: visible; opacity: 1');
+            }, 1000)
+        }, 350)
+    }, 350)
+}
+
 function centerClicked() {
     if(hash(sliderValues.join('')) == -1411274699) { // [true, false, false, true, false, true]
-        document.getElementById('ringInner').setAttribute('style', 'opacity: 0');
-        document.getElementById("inside").setAttribute('style', 'display: initial')
-        setTimeout(function() {
-            document.getElementById('ringInner').setAttribute('style', 'display: none;');
-        }, 1000)
+        // document.getElementById('ringInner').setAttribute('style', 'opacity: 0');
+        // document.getElementById("inside").setAttribute('style', 'display: initial')
+        // setTimeout(function() {
+        //     document.getElementById('ringInner').setAttribute('style', 'display: none;');
+        // }, 1000)
+        collapse()
     } else {
         document.getElementById('ringInner').setAttribute('style', 'width: 33vw; height: 33vw;');
         setTimeout(function() {
