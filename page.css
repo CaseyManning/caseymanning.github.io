@@ -7,9 +7,15 @@
 
 .indentColored {
     border-radius: 50%;
-    background: #ddbde5;
-    box-shadow: inset 31px 31px 62px #98829e, 
-                inset -31px -31px 62px #fff8ff;
+    /* background: #a140e2;
+    box-shadow: inset 31px 31px 62px #5d2583, 
+                inset -31px -31px 62px #e55bff; */
+    /* background: #9de264;
+    box-shadow: inset 31px 31px 62px #5b833a, 
+                inset -31px -31px 62px #dfff8e; */
+    background: #d896e2;
+    box-shadow: inset 31px 31px 62px #7d5783, 
+                inset -31px -31px 62px #ffd5ff;
 }
 
 #rotator {
@@ -62,9 +68,6 @@
     top: 0; bottom: 0; left: 0; right: 0;
     width: 35vw;
     height: 35vw;
-    /* background-image: url("tickMarks.png"); */
-    background-size: 38vw 38vw;
-    background-position: -1.5vw -1.5vw;
     transition: width ease 1s, height ease 1s, opacity ease 1s;
     cursor: pointer;
     z-index: 3;
@@ -77,6 +80,13 @@
     width: 38vw;
     height: 38vw;
     background-color: #fefef7;
+}
+
+#logo {
+    position: absolute;
+    margin: auto;
+    top: 0; bottom: 0; left: 0; right: 0;
+    width: 100%;
 }
 
 
