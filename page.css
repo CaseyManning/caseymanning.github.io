@@ -7,9 +7,9 @@
 
 .indentColored {
     border-radius: 50%;
-    background: #aae79e;
-    box-shadow: inset 31px 31px 62px #759f6d, 
-                inset -31px -31px 62px #dfffcf;
+    background: #ddbde5;
+    box-shadow: inset 31px 31px 62px #98829e, 
+                inset -31px -31px 62px #fff8ff;
 }
 
 #rotator {
