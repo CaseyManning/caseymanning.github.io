@@ -10,18 +10,32 @@ function slide(elem) {
 }
 
 function collapse() {
-    document.getElementById('ringInner').setAttribute('style', 'width: 0; height: 0;');
-    setTimeout(function() {
-        document.getElementById('ringInner2').setAttribute('style', 'width: 0; height: 0;');
-        document.getElementById('leftColumn').setAttribute('style', 'margin-left: -400px');
-        document.getElementById('rightColumn').setAttribute('style', 'margin-right: -400px');
+    // document.getElementById('logo').setAttribute('style', 'transform: rotate(360deg)');
+    // setTimeout(function() {
+        //document.getElementById('ringInner2').setAttribute('style', 'width: 0; height: 0;');
+        document.getElementById('ringInner').setAttribute('style', 'background: #a3db77; box-shadow: inset 31px 31px 62px #5f7f45, inset -31px -31px 62px #e7ffa9;');
         setTimeout(function() {
-            document.getElementById('ringOuter').setAttribute('style', 'width: 0; height: 0;');
+            document.getElementById('leftColumn').setAttribute('style', 'margin-left: -400px');
+            document.getElementById('rightColumn').setAttribute('style', 'margin-right: -400px');
             setTimeout(function() {
-                document.getElementById('afterLogo').setAttribute('style', 'visibility: visible; opacity: 1');
-            }, 1000)
-        }, 350)
-    }, 350)
+                document.getElementById('ringOuter').setAttribute('style', 'top: -2000px');
+                document.getElementById('ringInner').setAttribute('style', 'background: #a3db77; box-shadow: inset 31px 31px 62px #5f7f45, inset -31px -31px 62px #e7ffa9; top: -2000px');
+                document.getElementById('ringInner2').setAttribute('style', 'top: -2000px');
+                setTimeout(function() {
+                    document.getElementById('afterLogo').setAttribute('style', 'visibility: visible; opacity: 1');
+                    document.getElementById('progressBarOuter').setAttribute('style', 'visibility: visible; opacity: 1');
+                    document.getElementById('progressBarInner').setAttribute('style', 'width: 40vw');
+                    setTimeout(function() {
+                        document.getElementById('afterLogo').setAttribute('style', 'visibility: visible; opacity: 0');
+                        document.getElementById('progressBarOuter').setAttribute('style', 'visibility: visible; opacity: 0');
+                        setTimeout(function() {
+                            window.location = "page2.html"
+                        }, 1000)
+                    }, 5200)
+                }, 2000)
+            }, 700)
+        }, 400)
+    // }, 1500)
 }
 
 function centerClicked() {

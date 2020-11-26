@@ -13,9 +13,12 @@
     /* background: #9de264;
     box-shadow: inset 31px 31px 62px #5b833a, 
                 inset -31px -31px 62px #dfff8e; */
-    background: #d896e2;
+    /* background: #d896e2;
     box-shadow: inset 31px 31px 62px #7d5783, 
-                inset -31px -31px 62px #ffd5ff;
+                inset -31px -31px 62px #ffd5ff; */
+    background: #90d2dd;
+    box-shadow: inset 31px 31px 62px #547a80, 
+                inset -31px -31px 62px #ccffff;
 }
 
 #rotator {
@@ -43,6 +46,7 @@
 }
 
 #ringOuter {
+    margin-top: 0;
     position: absolute;
     margin: auto;
     top: 0; bottom: 0; left: 0; right: 0;
@@ -50,34 +54,37 @@
     height: 45vw;
     /* background-image: url("tickMarks.png"); */
     background-size: cover;
-    transition: width ease 1s, height ease 1s, opacity ease 1s;
+    transition: width ease 1s, height ease 1s, opacity ease-in 1s, margin ease 1s, top ease 1s;
 }
 
 #ringInner {
+    margin-top: 0;
     position: absolute;
     margin: auto;
     top: 0; bottom: 0; left: 0; right: 0;
     width: 35vw;
     height: 35vw;
-    transition: width ease 1s, height ease 1s, opacity ease 1s;
+    transition: width ease 1s, height ease 1s, background ease 0.5s, box-shadow ease 0.5s, margin ease 1s, top ease 1s;
     cursor: pointer;
     z-index: 3;
 }
 
 #ringInner2 {
+    margin-top: 0;
     position: absolute;
     margin: auto;
     top: 0; bottom: 0; left: 0; right: 0;
     width: 38vw;
     height: 38vw;
     background-color: #fefef7;
-    transition: width ease 1s, height ease 1s, opacity ease 1s;
+    transition: width ease 1s, height ease 1s, opacity ease-in 1s, margin ease 1s, top ease 1s;
 }
 
 #logo {
     position: absolute;
     margin: auto;
     top: 0; bottom: 0; left: 0; right: 0;
+    transition: transform ease 1.5s;
     width: 100%;
 }
 #afterLogo {
@@ -87,7 +94,7 @@
     width: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: opacity ease 2s;
+    transition: opacity ease 1s;
     width: 50vw;
 }
 
@@ -176,6 +183,31 @@ body {
     margin-left: 0%;
     transition: margin ease 1s;
 }
+
+#progressBarOuter {
+    position: absolute;
+    margin: auto;
+    left: 0; right: 0; bottom: 10vw;
+    width: 40vw;
+    height: 2vw;
+    border-radius: 1vw;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity ease 1s;
+    background: #fefef7;
+    box-shadow: inset 5px 5px 15px #b4b4af, 
+            inset -5px -5px 15px #ffffff;
+}
+
+#progressBarInner {
+    border-radius: 1vw;
+    width: 0vw;
+    height: 2vw;
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    margin-left: 0%;
+    transition: width ease 5s;
+}
+
 .red {
     background: linear-gradient(145deg, #d85b4b, #ff6c59);
 }
