@@ -20,13 +20,12 @@ function mousePressed() {
     redraw();
 }
 
-function splotch(center=[windowWidth/2, windowHeight/2], radius=100, npoints=10, startDepth = 1, iterDepth=3, opLayers=100) {
+function splotch(center=[windowWidth/2, windowHeight/2], radius=100, npoints=10, startDepth = 1, iterDepth=3, opLayers=50) {
     let palatte = [[255, 91, 25]]
     var index = floor(random(0, palatte.length));
     print(index)
     var color = palatte[index]
-    fill('rgba('+color[0]+', '+color[1]+', '+color[2]+', '+1/opLayers+')')
-    console.log('rgba('+random(0, 255)+', '+random(0, 255)+', '+random(0, 255)+', '+3/opLayers+')')
+    fill('rgba('+color[0]+', '+color[1]+', '+color[2]+', '+0.01+')')
     noStroke()
     var vertices = []
     let angle = TWO_PI / npoints;
@@ -38,7 +37,7 @@ function splotch(center=[windowWidth/2, windowHeight/2], radius=100, npoints=10,
     }
     var variances = []
     for(var i = 0; i < vertices.length; i++) {
-        variances.push(random(0.3, 0.7))
+        variances.push(random(0.1, 1.1))
     }
     for(var i = 0; i < startDepth; i++) {
         vertices = extrude(vertices, variances)
