@@ -14,6 +14,7 @@ function collapse() {
     // setTimeout(function() {
         //document.getElementById('ringInner2').setAttribute('style', 'width: 0; height: 0;');
         document.getElementById('ringInner').setAttribute('style', 'background: #a3db77; box-shadow: inset 31px 31px 62px #5f7f45, inset -31px -31px 62px #e7ffa9;');
+        // document.getElementById('logo').setAttribute('style', 'visibility: visible; opacity: 1');
         setTimeout(function() {
             document.getElementById('leftColumn').setAttribute('style', 'margin-left: -400px');
             document.getElementById('rightColumn').setAttribute('style', 'margin-right: -400px');

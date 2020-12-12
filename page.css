@@ -84,8 +84,10 @@
     position: absolute;
     margin: auto;
     top: 0; bottom: 0; left: 0; right: 0;
-    transition: transform ease 1.5s;
+    transition: transform ease 1.5s, opacity ease 0.5s;
     width: 100%;
+    /* opacity: 0;
+    visibility: hidden; */
 }
 #afterLogo {
     position: absolute;
