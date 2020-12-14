@@ -4,7 +4,7 @@ function setup() {
     background(255, 255, 245)
     createCanvas(windowWidth, windowHeight);
     noLoop();
-    blendMode(DARKEST);
+    blendMode(HARD_LIGHT);
     redraw();
 }
 
@@ -26,7 +26,7 @@ var brushPixels = 100;
 
 
 function draw() {
-    background(255, 255, 245)
+    // background(255, 255, 245)
     // huep = Math.random();
     // background(255, 255, 245)
     // for(var i = 0; i < windowWidth / 70; i++) {
