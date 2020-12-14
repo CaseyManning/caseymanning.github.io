@@ -15,6 +15,11 @@ var valp = 0;
 var lastX = 0;
 var lastY = 0;
 
+var iconPaddings = [20, 15, 10]
+var brushSizes = [50, 100, 200]
+var brushSize = 1;
+var brushPixels = 100;
+
 function draw() {
     background(255, 255, 245)
     // huep = Math.random();
@@ -36,10 +41,12 @@ function draw() {
 //hsv: 0.75, 0.61, 0.05
 
 function mousePressed() {
-    valp = Math.random()
-    satp = (Math.random() + 1) / 2
-    splotch([mouseX, mouseY])
-    redraw();
+    if(mouseX > 100) {
+        valp = Math.random()
+        satp = (Math.random() + 1) / 2
+        splotch([mouseX, mouseY])
+        redraw();
+    }
 }
 
 function mouseDragged() {
@@ -51,7 +58,7 @@ function mouseDragged() {
     }
 }
 
-function splotch(center=[windowWidth/2, windowHeight/2], radius=100, npoints=10, startDepth = 1, iterDepth=3, opLayers=20) {
+function splotch(center=[windowWidth/2, windowHeight/2], npoints=10, startDepth = 1, iterDepth=3, opLayers=20) {
     // let palatte = [[255, 91, 25], [91, 155, 125]]
     // var index = floor(random(0, palatte.length));
     // // print(index)
@@ -63,6 +70,8 @@ function splotch(center=[windowWidth/2, windowHeight/2], radius=100, npoints=10,
     noStroke()
     var vertices = []
     let angle = TWO_PI / npoints;
+
+    var radius = brushPixels;
 
     for (let a = 0; a < TWO_PI; a += angle) {
       let sx = center[0] + cos(a) * radius;
@@ -111,7 +120,7 @@ function extrude(verts, variances) {
         var i2 = (i+1)%(verts.length)
         var edgeVec = [verts[i2][0] - verts[i][0], verts[i2][1] - verts[i][1]]
         var edgeLength = Math.sqrt(edgeVec[0]*edgeVec[0] + edgeVec[1]*edgeVec[1])
-        var extrudeAmount = max(randomGaussian(20, 20) * edgeLength/60, 0) * variances[i] / (edgeLength/100);
+        var extrudeAmount = max(randomGaussian(20, 20) * edgeLength/60, 0) * variances[i] / (edgeLength/100) * brushPixels/100;
         var angle = (TWO_PI / verts.length)*i + random(-3, 3);
         var newVert = [(verts[i][0] + verts[i2][0])/2+cos(angle)*extrudeAmount, (verts[i][1] + verts[i2][1])/2 + +sin(angle)*extrudeAmount]
         newVerts.splice(i*2+1, 0, newVert);
@@ -123,6 +132,21 @@ function clearScreen() {
     clear()
     redraw()
 }
+
+function changeBrushSize() {
+    brushSize++;
+    brushSize %= 3;
+    brushPixels = brushSizes[brushSize];
+
+    document.getElementById('b2').setAttribute('style', 'padding: ' + iconPaddings[brushSize] + ";");
+    
+}
+
+function changeColor() {
+    huep = Math.random()
+}
+
+
 function HSVtoRGB(h, s, v) {
     var r, g, b, i, f, p, q, t;
     if (arguments.length === 1) {
