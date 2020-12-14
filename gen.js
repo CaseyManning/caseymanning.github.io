@@ -1,31 +1,65 @@
 var splotches = [];
 
 function setup() {
+    background(255, 255, 245)
     createCanvas(windowWidth, windowHeight);
     noLoop();
-    splotches.push([windowWidth/2, windowHeight/2])
-    background(255, 255, 245)
+    blendMode(DARKEST);
+    redraw();
 }
+
+var huep = 0.75; //Math.random();
+var satp = 0;
+var valp = 0;
+
+var lastX = 0;
+var lastY = 0;
 
 function draw() {
-    // for(var i = 0; i < splotches.length; i++) {
-    //     console.log('drawing splotch')
-    //     splotch(center=(splotches[i][0], splotches[i][1]))
+    background(255, 255, 245)
+    // huep = Math.random();
+    // background(255, 255, 245)
+    // for(var i = 0; i < windowWidth / 70; i++) {
+    //     for(var j = 0; j < windowWidth / 70; j++) {
+    //         splotch(center=[i*70 + random(-200, 200), j*70 + random(-200, 200)])
+    //     }
     // }
-    // splotch()
+    // // for(var i = 0; i < 150; i++) {
+    // //     splotch(center=[floor(randomGaussian(windowWidth/2, 150)), floor(randomGaussian(windowHeight/2, 150))], radius=random(50, 100))
+    // // }
 }
 
+// function mousePressed() {
+//     redraw();
+// }
+
+//hsv: 0.75, 0.61, 0.05
+
 function mousePressed() {
+    valp = Math.random()
+    satp = (Math.random() + 1) / 2
     splotch([mouseX, mouseY])
     redraw();
 }
 
-function splotch(center=[windowWidth/2, windowHeight/2], radius=100, npoints=10, startDepth = 1, iterDepth=3, opLayers=50) {
-    let palatte = [[255, 91, 25]]
-    var index = floor(random(0, palatte.length));
-    print(index)
-    var color = palatte[index]
-    fill('rgba('+color[0]+', '+color[1]+', '+color[2]+', '+0.01+')')
+function mouseDragged() {
+    if(Math.sqrt((mouseX - lastX)**2 + (mouseY - lastY)**2) > 30) {
+        lastX = mouseX;
+        lastY = mouseY;
+        splotch([mouseX, mouseY])
+        redraw();
+    }
+}
+
+function splotch(center=[windowWidth/2, windowHeight/2], radius=100, npoints=10, startDepth = 1, iterDepth=3, opLayers=20) {
+    // let palatte = [[255, 91, 25], [91, 155, 125]]
+    // var index = floor(random(0, palatte.length));
+    // // print(index)
+    // var color = palatte[index]
+    // color = [floor(random(0, 255)), floor(random(0, 255)), floor(random(0, 255))]
+    var color = HSVtoRGB(huep, satp, valp + 0.5)
+    //console.log(huep)
+    fill('rgba('+color.r+', '+color.g+', '+color.b + ', '+0.01+')')
     noStroke()
     var vertices = []
     let angle = TWO_PI / npoints;
@@ -35,7 +69,7 @@ function splotch(center=[windowWidth/2, windowHeight/2], radius=100, npoints=10,
       let sy = center[1] + sin(a) * radius;
       vertices.push([sx, sy]);
     }
-    var variances = []
+    var variances = [];
     for(var i = 0; i < vertices.length; i++) {
         variances.push(random(0.1, 1.1))
     }
@@ -85,6 +119,10 @@ function extrude(verts, variances) {
     return newVerts;
 }
 
+function clearScreen() {
+    clear()
+    redraw()
+}
 function HSVtoRGB(h, s, v) {
     var r, g, b, i, f, p, q, t;
     if (arguments.length === 1) {
