@@ -8,7 +8,10 @@ function setup() {
     redraw();
 }
 
-var huep = 0.75; //Math.random();
+var hues = [0.0299, 0.75, 0.59, 0.42];
+var hueIndex = 1;
+
+var huep = hues[1];
 var satp = 0;
 var valp = 0;
 
@@ -19,6 +22,8 @@ var iconPaddings = [20, 15, 10]
 var brushSizes = [50, 100, 200]
 var brushSize = 1;
 var brushPixels = 100;
+
+
 
 function draw() {
     background(255, 255, 245)
@@ -42,7 +47,7 @@ function draw() {
 
 function mousePressed() {
     if(mouseX > 100) {
-        valp = Math.random()
+        valp = (Math.random() + 1) / 2
         satp = (Math.random() + 1) / 2
         splotch([mouseX, mouseY])
         redraw();
@@ -143,7 +148,9 @@ function changeBrushSize() {
 }
 
 function changeColor() {
-    huep = Math.random()
+    hueIndex++;
+    hueIndex %= hues.length;
+    huep = hues[hueIndex]
 }
 
 
