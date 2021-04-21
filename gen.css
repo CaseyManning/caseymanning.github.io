@@ -18,7 +18,41 @@ body {
     height: 100%;
     z-index: 2;
     padding-left: 50px;
-  }
+    position: absolute;
+}
+
+#cont {
+    /* make element inline flex-container */
+    /* this will make its children flex-items */
+    display: inline-flex;
+    /* align-items items in column */
+    flex-direction: column;
+    /* center items vertically */
+    justify-content: center;
+    height: 100%;
+    z-index: 2;
+    padding-left: 50px;
+}
+
+#brushSettings {
+    top: 10px;
+    left: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.45) 0px 6px 12px -2px, rgba(0, 0, 0, 0.5) 0px 3px 7px -3px;
+    pointer-events: 0;
+    height: 200px;
+    user-select: none;
+    position: absolute;
+}
+
+div {
+    z-index: 2;
+}
 
 .button {
     margin-top: 50%;
@@ -28,7 +62,7 @@ body {
     padding-top: 10px;
     padding-left: 15px;
     padding-right: 15px;
-    background-color: rgb(255, 255, 245);
+    background-color: rgb(255, 255, 255);
     width: fit-content;
     padding-bottom: 10px;
     border-radius: 200px;
@@ -46,7 +80,7 @@ button:focus {
     outline:0;
 }
 button:hover {
-    background-color:rgb(245, 245, 235);
+    background-color:rgb(245, 245, 245);
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 12px 24px -4px, rgba(0, 0, 0, 0.3) 0px 6px 14px -6px; */
 }
 
@@ -61,5 +95,52 @@ button:hover {
   
 canvas {
     position: absolute;
-    z-index: -1;
+    z-index: -2;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 4px; /* Specified height */
+    background: #222222; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 20px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: #222222; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 100px;
+}
+
+#sliders {
+    margin-left: auto;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left: 200px;
+    padding-right: 20px;
+    width: 100px;
 }

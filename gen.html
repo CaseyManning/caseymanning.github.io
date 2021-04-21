@@ -4,11 +4,27 @@
     <link rel="stylesheet" type="text/css" href="gen.css"/>
 </head>
 <body>
-    <main style="z-index: -1;">
+    <main>
     </main>
+    <div id="cont">
+        <div id="brushSettings">
+            <div id="sliders">
+            <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+              </div>
+              <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+              </div>
+              <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+              </div>
+            </div>
+        </div>
+    </div>
     <div id="buttonContainer">
         <button id="b1" class="button" onclick="clearScreen()"></button>
         <button id="b2" class="button" onclick="changeBrushSize()"></button>
         <button id="b3" class="button" onclick="changeColor()"></button>
       </div>
+
 </body>

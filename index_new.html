@@ -1,0 +1,115 @@
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <p class="title">Casey</p>
+    <ul>
+        <li><a href="#" onclick="show('home', this)">projects</a></li>
+        <li><a href="#" onclick="show('links', this)">links</a></li>
+        <li><a href="#" onclick="show('tags', this)">artwork</a></li>
+        <li><a href="#" onclick="show('videos', this)">animations</a></li>
+        <li><a href="#" onclick="show('about', this)">about</a></li>
+      </ul>
+      <div class="content">
+        <div class="expandable" id="about">
+            <div class="descbox">
+            <p>
+                it me
+            </p>
+            </div>
+        </div>
+        <div class="expandable" style="align-items: start" id="tags">
+            <div class="artcol">
+                <img src="images/looker.png" onclick="expand(this.src)">
+                <img src="images/voloombetter.png" onclick="expand(this.src)">
+                <img src="images/Columns.png" onclick="expand(this.src)">
+                <img src="images/succ5.png" onclick="expand(this.src)">
+                <img src="images/hologram.jpg" onclick="expand(this.src)">
+                <img src="images/hoverBike.png" onclick="expand(this.src)">
+                <img src="images/ladybugRobot.png" onclick="expand(this.src)">
+                <img src="images/Spaceship.png" onclick="expand(this.src)">
+                <img src="images/darkCity.png" onclick="expand(this.src)">
+                <img src="images/crawlypoly4.png" onclick="expand(this.src)">
+                <img src="images/villageSquareFinal.png" onclick="expand(this.src)">
+            </div>
+            <div class="artcol">
+                <img src="images/therig.png" onclick="expand(this.src)">
+                <img src="images/lifters.png" onclick="expand(this.src)">
+                <img src="images/bakery.png" onclick="expand(this.src)">
+                <img src="images/bubbles.png" onclick="expand(this.src)">
+                <img src="images/robotheadNewer.png" onclick="expand(this.src)">
+                <img src="images/dronerender2.png" onclick="expand(this.src)">
+                <img src="images/ghibliFinal.png" onclick="expand(this.src)">
+                <img src="images/structure.png" onclick="expand(this.src)">
+                <img src="images/smoothies.png" onclick="expand(this.src)">
+                <img src="images/up.png" onclick="expand(this.src)">
+            </div>
+        </div>
+        <div class="expandable" id="home">
+            <div class="card">
+                <p class="cardtitle">Omelettes</p>
+                <p class="cardbody">also known as 'yomlettes' due to their distinctive eggy flavor</p>
+                <div class="cardlinks">
+                    <a class="cardlink" href="#" style="margin-right: 0px;">Github</a>
+                    <a class="cardlink" href="#" style="margin-right: 30px;">Video</a>
+                </div>
+            </div>
+            <div class="card">
+                <p class="cardtitle">iOS Puzzle Game</p>
+                <p class="cardbody">lorem</p>
+                <div class="cardlinks">
+                    <a class="cardlink" href="#" style="margin-right: 0px;">Github</a>
+                    <a class="cardlink" href="#" style="margin-right: 30px;">App Store</a>
+                </div>
+            </div>
+            <div class="card">
+                <p class="cardtitle">PID Auto-tuner</p>
+                <p class="cardbody">ipsum</p>
+                <div class="cardlinks">
+                    <a class="cardlink" href="#" style="margin-right: 0px;">Github</a>
+                    <a class="cardlink" href="#" style="margin-right: 30px;">Demo</a>
+                </div>
+            </div>
+            <div class="card">
+                <p class="cardtitle">Actualization</p>
+                <p class="cardbody">work in progress</p>
+                <div class="cardlinks">
+                    <a class="cardlink" href="#" style="margin-right: 0px;">Demo</a>
+                </div>
+            </div>
+        </div>
+        <div class="expandable" id="links">
+            <a class="card clickablecard" href="#" style="margin-left: 20%; margin-right: 20%;">
+                <p class="cardtitle">Github</p>
+                <p class="cardbody" style="margin-bottom: 0 !important;">Click to download</p>
+            </a>
+            <a class="card clickablecard" href="#" style="margin-left: 20%; margin-right: 20%;">
+                <p class="cardtitle">Linkedin</p>
+                <p class="cardbody" style="margin-bottom: 0 !important;">Click to download</p>
+            </a>
+            <a class="card clickablecard" href="Resume.pdf" style="margin-left: 20%; margin-right: 20%;">
+                <p class="cardtitle">Resume</p>
+                <p class="cardbody" style="margin-bottom: 0 !important;">Click to download</p>
+            </a>
+        </div>
+    <div class="expandable" id="videos">
+        <video width="540" height="320" controls>
+            <source src="HTML Video - Google Chrome 2021-04-21 16-24-56.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+          <video width="540" height="320" controls>
+            <source src="HTML Video - Google Chrome 2021-04-21 16-24-56.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+          <video width="540" height="320" controls>
+            <source src="HTML Video - Google Chrome 2021-04-21 16-24-56.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+          <video width="540" height="320" controls>
+            <source src="HTML Video - Google Chrome 2021-04-21 16-24-56.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+        </div>
+    </div>
+</body>
