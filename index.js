@@ -106,6 +106,6 @@ function animate() {
 }
 
 window.onload = function() {
-    init();
-    animate();
+    // init();
+    // animate();
 };
