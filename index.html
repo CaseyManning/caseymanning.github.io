@@ -1,173 +1,119 @@
-<link rel="stylesheet" type="text/css" href="index_old.css" />
+<staticContent>
+    <mimeMap fileExtension=”.mp4″ mimeType=”video/mp4″ />
+    </staticContent>
 <head>
-    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
 </head>
-<script src="index_old.js"></script>
-<body id="bod">
-    <div class="top">
-        <br>
-        <br>
-        <br>
-        <center>
-            <h1>Casey Manning</h1>
-        </center>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <hr style="border: 0; border-top: 1px solid #222; width: 30%;">
-    </div>
-    
-    <br><br>
-
-    <div class="row">
-        <div class="column" id="artColumn">
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <p class="title"><b>Artwork</b></p>
-            <br>
-            <center>
-                <div class="card" onclick="artTransition();">
-                    <center>
-                        <p>Art Portfolio</p>
-                    </center>
-                </div>
-                <br>
-                <div class="card" onclick="location.href='https://caseymanning.github.io/gen'">
-                    <center>
-                    <p>Watercolors</p>
-                    </center>
-                </div>
-            </center>
-            
-        </div>
-        <div class="column" id="projectsColumn">
-            <br><br><br><br><br><br><br><br><br><br><br><br>
-            <p class="title"><b>Projects</b></p>
-            <br>
-            <center>
-            <div class="card" id="omelettes" onclick="expandPlayground()">
-                <center>
-                <p>Automatic Omelette Robot</p>
-                </center>
-            </div>
-            <div class="childcard"">
-                <br>
-                <br>
-                <p class="projectItem" onclick="location.href='https://playground.global/playgrams/scrambld-high-school-summer-intern-2019'">
-                    Video
-                </p>
-                <hr style="width:40%; border: 0; border-top: 1px solid #222;">
-                <p class="projectItem" onclick="location.href='https://github.com/CaseyManning/PlaygroundOmelettes'">
-                    Github
-                </p>
-                <br>   
-            </div>
-            <br>
-            <center>
-            <div class="card" id="amanu" onclick="expandAmanu()">
-                <center>
-                <p>Amanu: iOS Puzzle Game</p>
-                </center>
-            </div>
-            <div class="childcard"">
-                <br>
-                <br>
-                <p class="projectItem" onclick="location.href='https://itunes.apple.com/us/app/amanu/id1142733267'">
-                    App Store
-                </p>
-                <hr style="width:40%; border: 0; border-top: 1px solid #222;">
-                <p class="projectItem" onclick="location.href='https://github.com/CaseyManning/GravityPuzzle'">
-                    Github
-                </p>
-                <br>   
-            </div>
-            <br>
-            <center>
-            <div class="card" onclick="location.href='https://github.com/RoboticsTeam4904/ControlLoops'">
-                <center>
-                <p>Robotics PID Visualizer & Auto-tuner</p>
-                </center>
-            </div>
-        </center>
-
-        </div>
-        <div class="column" id="linksColumn">
-            <br><br><br><br><br><br><br><br><br>
-            <p class="title"><b>Links</b></p>
-            <br>
-            <center>
-            <div class="card" onclick="location.href='https://github.com/caseymanning'">
-                <center>
-                <p>Github</p>
-                </center>
-            </div>
-            <br>
-            <center>
-            <div class="card" onclick="location.href='https://www.linkedin.com/in/caseytmanning/'">
-                <center>
-                <p>Linkedin</p>
-                </center>
-            </div>
-            <br>
-            <center>
-            <div class="card" onclick="saveResume()">
-                <center>
-                <p>Resume</p>
-                </center>
-            </div>
-        </div>
-    </div>
-
-        <!-- <div class="row">
-        <div class="column">
-            <div class="card" onclick="location.href='https://caseymanning.github.io/artwork'">
-                <p>
-                    <b>Artwork</b>
-                </p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card" onclick="expandProjects()" id="projects">
-                <p>
-                    <b>Projects</b>
-                </p>
-            </div>
-            <div class="childcard"">
-                <br>
-                <br>
-                <p class="projectItem" onclick="location.href='https://itunes.apple.com/us/app/amanu/id1142733267'">
-                    <b>Amanu: iOS Puzzle Game</b>
-                </p>
-                <hr style="width:40%">
-                <p class="projectItem" onclick="location.href='https://playground.global/playgrams/scrambld-high-school-summer-intern-2019'">
-                    <b>Automatic Omelette Cooking at Playground Global</b>
-                </p>
-                <hr style="width:40%">
-
-                <p class="projectItem" onclick="location.href='https://github.com/RoboticsTeam4904/ControlLoops'">
-                    <b>FRC Robotics PID Visualizer & Auto-tuner</b>
-                </p>
-                <br>   
-            </div>
-        </div>
-        <div class="column">
-        <div class="card" onclick="location.href='https://github.com/caseymanning'">
-            <br>
-            <br>
-            <br>
-            <div class="bottomText">
-                <p>
-                    <b>Links</b>
-                </p>
-            </div>
-        </div> -->
-        <!-- <br>
-        <div class="card" onclick="location.href='https://www.linkedin.com/in/caseytmanning/'">
+<body>
+    <p class="title">Casey Manning</p>
+    <ul>
+        <li><a href="#" onclick="show('home', this)">projects</a></li>
+        <li><a href="#" onclick="show('links', this)">links</a></li>
+        <li><a href="#" onclick="show('tags', this)">artwork</a></li>
+        <li><a href="#" onclick="show('videos', this)">animations</a></li>
+        <li><a href="#" onclick="show('about', this)">about</a></li>
+      </ul>
+      <div class="content">
+        <div class="expandable" id="about">
+            <div class="card">
             <p>
-                <b>LinkedIn</b>
+                I'm a student studying computer science at Stanford University.
             </p>
-        </div> -->
-        <!-- </div> -->
-    <!-- </div> -->
-    </body>
+            <p>
+                I'm interested in robotics, computer graphics, 3d modelling, and more.
+            </p>
+            </div>
+        </div>
+        <div class="expandable" style="align-items: start; width: 90%;" id="tags">
+            <div class="artcol">
+                <img src="images/looker.png" onclick="expand(this.src)">
+                <img src="images/voloombetter.png" onclick="expand(this.src)">
+                <img src="images/Columns.png" onclick="expand(this.src)">
+                <img src="images/succ5.png" onclick="expand(this.src)">
+                <img src="images/hologram.jpg" onclick="expand(this.src)">
+                <img src="images/hoverBike.png" onclick="expand(this.src)">
+                <img src="images/ladybugRobot.png" onclick="expand(this.src)">
+                <img src="images/Spaceship.png" onclick="expand(this.src)">
+                <img src="images/darkCity.png" onclick="expand(this.src)">
+                <img src="images/crawlypoly4.png" onclick="expand(this.src)">
+                <img src="images/villageSquareFinal.png" onclick="expand(this.src)">
+            </div>
+            <div class="artcol">
+                <img src="images/therig.png" onclick="expand(this.src)">
+                <img src="images/lifters.png" onclick="expand(this.src)">
+                <img src="images/bakery.png" onclick="expand(this.src)">
+                <img src="images/bubbles.png" onclick="expand(this.src)">
+                <img src="images/robotheadNewer.png" onclick="expand(this.src)">
+                <img src="images/dronerender2.png" onclick="expand(this.src)">
+                <img src="images/ghibliFinal.png" onclick="expand(this.src)">
+                <img src="images/structure.png" onclick="expand(this.src)">
+                <img src="images/smoothies.png" onclick="expand(this.src)">
+                <img src="images/up.png" onclick="expand(this.src)">
+            </div>
+        </div>
+        <div class="expandable" id="home">
+            <div class="card">
+                <p class="cardtitle">Omelette Robot</p>
+                <p class="cardbody">Automated system to recieve omelette orders and cook them from scratch using a robotic arm.</p>
+                <div class="cardlinks">
+                    <a class="cardlink" href="https://github.com/CaseyManning/PlaygroundOmelettes" style="margin-right: 0px;">Github</a>
+                    <a class="cardlink" href="https://playground.global/playgrams/scrambld-high-school-summer-intern-2019" style="margin-right: 30px;">Video</a>
+                </div>
+            </div>
+            <div class="card">
+                <p class="cardtitle">iOS Puzzle Game</p>
+                <p class="cardbody">Amanu is a gravity-based puzzle game available on the App Store.</p>
+                <div class="cardlinks">
+                    <a class="cardlink" target="_blank" rel="noopener noreferrer" href="https://github.com/CaseyManning/GravityPuzzle" style="margin-right: 0px;">Github</a>
+                    <a class="cardlink" target="_blank" rel="noopener noreferrer" href="https://itunes.apple.com/us/app/amanu/id1142733267" style="margin-right: 30px;">App Store</a>
+                </div>
+            </div>
+            <div class="card">
+                <p class="cardtitle">PID Auto-tuner</p>
+                <p class="cardbody">Automatically tune PID loop for a FIRST robotics flywheel system</p>
+                <div class="cardlinks">
+                    <a class="cardlink" target="_blank" rel="noopener noreferrer" href="https://github.com/RoboticsTeam4904/ControlLoops" style="margin-right: 0px;">Github</a>
+                    <!-- <a class="cardlink" href="#" style="margin-right: 30px;">Demo</a> -->
+                </div>
+            </div>
+            <div class="card">
+                <p class="cardtitle">Unity Game Development</p>
+                <p class="cardbody">Web games created in Unity.</p><br>
+                <div class="cardlinks">
+                    <a class="cardlink" target="_blank" rel="noopener noreferrer" href="https://spaaace.itch.io/" style="margin-right: 0px;">itch.io page</a>
+                    <!-- <a class="cardlink" href="#" style="margin-right: 30px;">Demo</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="expandable" id="links">
+            <a class="card clickablecard" target="_blank" rel="noopener noreferrer" href="https://github.com/CaseyManning/" style="margin-left: 20%; margin-right: 20%;">
+                <p class="cardtitle">Github</p>
+            </a>
+            <a class="card clickablecard" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/caseytmanning/" style="margin-left: 20%; margin-right: 20%;">
+                <p class="cardtitle">Linkedin</p>
+            </a>
+            <a class="card clickablecard" target="_blank" rel="noopener noreferrer" href="Resume.pdf" style="margin-left: 20%; margin-right: 20%;">
+                <p class="cardtitle">Resume</p>
+            </a>
+        </div>
+    <div class="expandable" id="videos">
+        <video width="540" height="540" controls>
+            <source src="train1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+          <video width="540" height="720" controls>
+            <source src="drone.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+          <!-- <video width="540" height="540" controls>
+            <source src="chickenv4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video> -->
+          <video width="540" height="540" controls>
+            <source src="windowplant.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+        </div>
+    </div>
+</body>
