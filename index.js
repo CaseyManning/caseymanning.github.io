@@ -1,4 +1,5 @@
 function hideall() {
+    document.getElementById("model").style.display = "none";
     var expands = document.getElementsByClassName("expandable")
     for(var i = 0; i < expands.length; i++) {
         expands[i].style.maxHeight = null;
