@@ -105,7 +105,7 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-window.onload = function() {
-    init();
-    animate();
-};
+// window.onload = function() {
+//     init();
+//     animate();
+// };
