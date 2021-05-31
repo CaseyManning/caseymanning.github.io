@@ -61,7 +61,7 @@ function init() {
 
     renderer = new THREE.WebGLRenderer({antialias:true});
 
-    renderer.setSize(window.innerWidth, window.innerHeight/2);
+    renderer.setSize(window.innerWidth-8, window.innerHeight/2);
     document.getElementById("model").appendChild(renderer.domElement);
 
     let loader = new THREE.GLTFLoader();
@@ -106,6 +106,6 @@ function animate() {
 }
 
 window.onload = function() {
-    // init();
-    // animate();
+    init();
+    animate();
 };

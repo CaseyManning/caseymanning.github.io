@@ -1,0 +1,41 @@
+start | Mr. Dialog
+well, well, well.
+look what we have here
+
+now i could be wrong
+but it looks almost like a dialog system
+
+the text even wraps to the next line if u make a line thats really long! it looks kinda jumpy tho
+ > truly a marvel of modern engineering | marvel
+ > i like dialog | like
+ > should the text be center-aligned? | align
+---
+align | Mr. Dialog
+Well for that we'll need to consult my alignment expert, Mr. Alignment
+ > oh boy! | align2
+---
+align2 | Mr. Alignment
+no, it should not be
+ > oh that makes sense | start
+ > what about the dialog choice boxes? should they resize to fit their contents? | resize
+ > woah the picture changed | picture
+---
+picture | Mr. Alignment
+sure did.
+ > Continue | start
+---
+resize | Mr. Alignment
+why are you asking Mr. Alignment? how should he know?
+ > good point | start
+---
+marvel | Mr. Dialog
+it even automatically puts in pauses when there are newlines.
+
+cuz its cool
+ > i see i see | start
+---
+like | Mr. Dialog
+listen, i'm one named mr. dialog.
+
+go find something else to like
+ > darn. | start
