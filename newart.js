@@ -2,9 +2,8 @@ var sourceImage;
 
 for (let i = 0; i < document.getElementById("grid").children.length; i++) {
     const element = document.getElementById("grid").children[i];
-    
     element.addEventListener("click", function(event) {
-
+        console.log("clicked")
         var img = document.getElementById("focusedimg")
         sourceImage = event.target;
         img.src  = event.target.src;

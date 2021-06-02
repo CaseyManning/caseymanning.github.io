@@ -1,19 +1,30 @@
 .grid-container {
     display: grid;
-    position: absolute;
-    left: 5px; right: 0; top: 5px; bottom: 0; margin: auto;
-    grid-template-columns: repeat(18, calc(12.5vmin - 11px));
-    grid-template-rows: repeat(8, calc(12.5vmin - 11px));
-    gap: 11px 11px;
+    /* position: absolute; */
+    /* left: 5px; right: 0; top: 5px; bottom: 0; margin: auto; */
+    padding-top: 20px;
+    grid-template-columns: repeat(5, calc(15vw - 11px));
+    grid-template-rows: repeat(22, calc(15vw - 11px));
+    gap: 20px 20px;
     grid-template-areas:
-      "g g f f h h i i i i n n n . o o o . end"
-      "b b f f h h i i i i n n n . o o o . end"
-      "b b e e a a a a l l l k k k o o o . end"
-      "b b e e a a a a l l l k k k p p p . end"
-      "c c c c a a a a l l l k k k p p p . end"
-      "c c c c a a a a j j j k k k q q . . end"
-      "c c c c d d d d j j j m m m q q . . end"
-      "c c c c d d d d j j j m m m q q . . end";
+      "a a a b b"
+      "a a a b b"
+      "a a a e e"
+      "d d d e e"
+      "d d d e e"
+      "f f c c c"
+      "f f c c c"
+      "g g c c c"
+      "g g h h h"
+      "i i h h h"
+      "j j j k k"
+      "j j j k k"
+      "j j j l l"
+      "m m m l l"
+      "m m m n n"
+      "o o . n n"
+      "o o . q q"
+      "o o . . .";
 }
 
 .b img {animation-delay: 0s !important;}
@@ -61,8 +72,6 @@
     top: 0; bottom: 0;
     margin:auto;
     padding: 120px;
-    padding-top: 200px;
-    padding-bottom: 200px;
     opacity: 0;
     transition: padding 0.5s, opacity 0.5s;
 }
@@ -91,28 +100,43 @@
     /* opacity: 0.5; */
 }
 
+.grid-container div {
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+    box-sizing: border-box;
+    border: 0px solid #fff0;
+}
+
 .grid-container img {
     height: 100%;
-    min-width: 100%;
-    border-radius: 6px;
+    border-radius: inherit;
+    /* min-width: 100%; */
+    object-fit: cover;
+    height: 100%;
     transition: 0.2s;
     transform: scale(0);
     cursor: pointer;
     /* animation: bounce 0.3s ease forwards 0s; */
-    /* animation-play-state: paused; */
+    animation-play-state: paused;
     animation: bouncein 0.5s ease-in-out forwards;
     border: 2px solid #0000;
 }
 
-.grid-container img:hover {
-    transform: scale(0.97) !important;
-    /* border: 1px solid white; */
+.grid-container div:hover {
+    border: 5px solid #fff0;
 }
 
 body {
-    background-color: #000;
-    overflow: hidden;
+    background-color: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 @keyframes bouncein {
@@ -136,7 +160,7 @@ body {
 }
 
 #fullsc {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-color: #0009;
@@ -145,6 +169,7 @@ body {
     cursor: pointer;
     opacity: 0;
     transition: 1s;
+    top: 0;
 }
 
 #focusedimg {
@@ -152,7 +177,7 @@ body {
     height: auto;
     position: absolute;
     margin: auto;
-    box-shadow: rgba(0, 0, 0, 1) 0px 20px 100px 0px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 50px 0px;
     max-width: 90%;
     border-radius: 5px;
     user-select: none;
