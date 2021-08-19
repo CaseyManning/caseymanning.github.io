@@ -105,7 +105,13 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-// window.onload = function() {
-//     init();
-//     animate();
-// };
+window.onload = function() {
+    // init();
+    // animate();
+    console.log("onloooad")
+    if(window.location.href.includes("artwork")) {
+        console.log("showing")
+        show("tags", document.getElementById("artworkbutton"));
+    }
+};
+
