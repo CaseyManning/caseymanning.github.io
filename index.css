@@ -14,6 +14,34 @@
     margin-top: 100px;
 }
 
+.topwaves {
+    aspect-ratio: 2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('layered-waves.svg');
+    z-index: -1;
+}
+
+#home .card {
+    height: 150px !important;
+}
+
+.bottomwaves {
+    aspect-ratio: 1;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('layered-waves2.svg');
+    z-index: -1;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -120,18 +148,15 @@ li a:hover::after {
     flex-direction: column;
     margin: 20px;
     padding: 30px;
-    /* background-color: #efefef; */
+    background-color: #fff;
     border-radius: 10px;
-    border-style: solid;
-    border-color: #eee;
     width: 40%;
     min-width: 350px;
-    border-width: 2px;
-    transition: border-color 0.4s;
-    /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); */
+    transition: box-shadow 0.4s;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 .card:hover {
-    border-color: #ccc;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
 }
 
 a {
@@ -156,7 +181,7 @@ video {
     margin-top: 30px;
     margin-bottom: 30px;
     width: 100%;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .cardtitle {
