@@ -17,6 +17,7 @@
 .topwaves {
     aspect-ratio: 2;
     position: fixed;
+    transform: rotate(180deg) scale(1.5);
     bottom: 0;
     width: 100%;
     background-repeat: no-repeat;
