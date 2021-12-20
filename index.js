@@ -1,117 +1,92 @@
-function hideall() {
-    // document.getElementById("model").style.display = "none";
-    var expands = document.getElementsByClassName("expandable")
-    for(var i = 0; i < expands.length; i++) {
-        expands[i].style.maxHeight = null;
-    }
-}
+var selectedScene = "";
 
 function show(name, button) {
-    if(parseInt(document.getElementById(name).style.maxHeight) > 0) {
-        button.classList.remove("selected");
-        hideall();
+
+    // if(parseInt(document.getElementById(name).style.maxHeight) > 0) {
+    //     button.classList.remove("selected");
+    //     hideall();
+    //     return;
+    // }
+
+    if(button.classList.contains("selected")) {
+        document.getElementsByClassName("halfscreen")[0].classList.remove("shrunk");
+        document.getElementById("coverimg").classList.remove("hidden");
+        document.getElementById("content").classList.add("hidden");
+        document.getElementById(name).classList.add("hidden");
+        button.classList.remove("selected")
         return;
     }
+
     var btns = document.getElementsByClassName("selected");
     for(var i = 0; i < btns.length; i++) {
         btns[i].classList.remove("selected");
     }
+
+    document.getElementsByClassName("halfscreen")[0].classList.add("shrunk");
+    document.getElementById("coverimg").classList.add("hidden");
+    document.getElementById("content").classList.remove("hidden");
     button.classList.add("selected");
-    hideall();
-    setTimeout(function() {
-    var elem = document.getElementById(name);
-    // var parent = elem.parentNode;
-    // parent.removeChild(elem)
-    // parent.prepend(elem)
-    elem.style.maxHeight = elem.scrollHeight + "px";
-    }, 300);
+
+    if(selectedScene.length > 1) {
+        document.getElementById(selectedScene).classList.add("hidden")
+    }
+    selectedScene = name;
+    document.getElementById(name).classList.remove("hidden");
 }
 
-function saveResume() {
-    var elem = window.document.createElement('a');
-    elem.href = 'Resume.pdf'
-    elem.download = 'Resume.pdf';        
-    document.body.appendChild(elem);
-    elem.click();
-    document.body.removeChild(elem);
+function hideFocused() {
+    document.getElementById("fullsc").classList.add("hidden");
 }
 
+document.getElementById("focusedimg").click(function(e) {
+    e.stopPropagation();
+})
 
+document.addEventListener('keydown', (e) => {
+    if (e.code === "ArrowLeft") {
+       leftClicked(e);
+    } else if (e.code === "ArrowRight") {
+        rightClicked(e);
+    } else if(e.code === "Escape") {
+        hideFocused();
+    }
+  });
 
-let scene, camera, renderer;
-
-function init() {
-    scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff);
-
-    camera = new THREE.PerspectiveCamera(40, window.innerWidth/(window.innerHeight/2), 1, 5000);
-    camera.rotation.y = -45/180 * Math.PI;
-    camera.position.x = -6.5;
-    camera.position.y = 1;
-    camera.position.z = 6.5;
-
-
-    var hlight = new THREE.AmbientLight(0x404040, 1);
-    scene.add(hlight);
-
-    var dirlight = new THREE.DirectionalLight(0xffffff, 1);
-    dirlight.castShadow = true;
-    dirlight.position.set(-2, 5, 0);
-    scene.add(dirlight);
-
-    renderer = new THREE.WebGLRenderer({antialias:true});
-
-    renderer.setSize(window.innerWidth-8, window.innerHeight/2);
-    document.getElementById("model").appendChild(renderer.domElement);
-
-    let loader = new THREE.GLTFLoader();
-    loader.load('bikeapplied.gltf', function(gltf) {
-        scene.add(gltf.scene);
-        renderer.render(scene, camera)
-    });
-}
-
-THREE.Object3D.prototype.rotateAroundWorldAxis = function() {
-
-    // rotate object around axis in world space (the axis passes through point)
-    // axis is assumed to be normalized
-    // assumes object does not have a rotated parent
-
-    var q = new THREE.Quaternion();
-
-    return function rotateAroundWorldAxis( point, axis, angle ) {
-
-        q.setFromAxisAngle( axis, angle );
-
-        this.applyQuaternion( q );
-
-        this.position.sub( point );
-        this.position.applyQuaternion( q );
-        this.position.add( point );
-
-        return this;
-
+  function leftClicked(e) {
+    if(sourceImage.previousElementSibling) {
+        sourceImage = sourceImage.previousElementSibling;
+    } else {
+        if(sourceImage.parentElement.id == "ac1") {
+            sourceImage = document.getElementById("ac2").lastElementChild;
+        } else {
+            sourceImage = document.getElementById("ac1").lastElementChild;
+        }
     }
 
-}();
+    document.getElementById("focusedimg").src = sourceImage.src;
+    e.stopPropagation();
+}
+function rightClicked(e) {
+    if(sourceImage.nextElementSibling) {
+        sourceImage = sourceImage.nextElementSibling;
+    } else {
+        if(sourceImage.parentElement.id == "ac1") {
+            sourceImage = document.getElementById("ac2").firstElementChild;    
+        } else {
+            sourceImage = document.getElementById("ac1").firstElementChild;
+        }
+    }
 
-// var angle = 0;
-
-function animate() {
-    console.log('going')
-    camera.rotateAroundWorldAxis(new THREE.Vector3(0,0,0), new THREE.Vector3(0,1,0), 0.01);
-    // angle += 1;
-    requestAnimationFrame(animate);
-    renderer.render(scene, camera);
+    document.getElementById("focusedimg").src = sourceImage.src;
+    e.stopPropagation();
 }
 
-window.onload = function() {
-    // init();
-    // animate();
-    console.log("onloooad")
-    if(window.location.href.includes("artwork")) {
-        console.log("showing")
-        show("tags", document.getElementById("artworkbutton"));
-    }
-};
+function expand(img) {
+    console.log(img)
+    sourceImage = img;
+    var cimg = document.getElementById("focusedimg")
+    cimg.src  = img.src;
+    document.getElementById("fullsc").classList.remove("hidden");
+    document.getElementById("fullsc").style.opacity = "1";
 
+}
