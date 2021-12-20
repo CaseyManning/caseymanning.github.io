@@ -69,7 +69,7 @@ video {
 }
 
 .content {
-    width: calc(100% - 330px);
+    width: calc(100% - 320px);
     height: 100%;
     z-index: 2;
     /* display: flex; */
@@ -193,8 +193,10 @@ li a:hover::after {
 }
 
 .artcol > img {
-    width: calc(100% - 30px);
-    margin: 15px;
+    width: calc(100% - 50px);
+    margin: 25px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .gameContent {
