@@ -169,7 +169,7 @@ class OrbitControls extends THREE.EventDispatcher {
 				if ( scope.autoRotate && state === STATE.NONE ) {
 
 					rotateLeft( getAutoRotationAngle() );
-
+                    // rotateUp(getAutoRotationAngle() / 2);
 				}
 
 				if ( scope.enableDamping ) {

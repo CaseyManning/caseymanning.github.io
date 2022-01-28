@@ -99,15 +99,10 @@ function update()
 	var moveDistance = 20 * delta; // 200 pixels per second
 	var rotateAngle = Math.PI / 2 * delta;   // pi/2 radians (90 degrees) per second
 
-	// move forwards/backwards/left/right
-	if ( keyboard.pressed("W") ) {
-		cubeMesh.translateZ( -moveDistance );
+    if(isosp) {
+        // isosp.rotation.x += delta/2;
+        isosp.rotation.z += delta;
     }
-
-    // if(isosp) {
-    //     isosp.rotation.x += delta/2;
-    //     isosp.rotation.z += delta;
-    // }
 
     popTimer -= delta;
     if(popTimer <= 0 && popping.length != isosp.children.length) {
@@ -116,7 +111,7 @@ function update()
         do {
             index = Math.floor(Math.random()*isosp.children.length);
         } while(popping.includes(index));
-        console.log("popping " + index);
+
         popping.push(index);
         popstart[index] = time;
         amountMoved[index] = 0;
