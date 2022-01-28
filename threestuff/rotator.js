@@ -32,6 +32,7 @@ loader.load('iso4.glb', function ( gltf ) {
         // face.scale.set(3,3,3);
     }
     isosp.scale.set(3,3,3);
+    isosp.rotation.x = 0.5
 
     scene.add(isosp);
 
@@ -56,6 +57,8 @@ scene.add(light);
 
 scene.add(camera)
 
+
+
 scene.background = new THREE.Color( 0xffffff );
 
 var renderer = new THREE.WebGLRenderer({
@@ -68,10 +71,15 @@ renderer.render(scene, camera);
 
 document.body.appendChild(renderer.domElement);
 
+controls = new OrbitControls( camera, renderer.domElement);
+// controls.addEventListener( 'change', render );
+
+
 function animate() 
 {
     requestAnimationFrame( animate );
     renderer.render(scene, camera);
+    controls.update();
 	update();
 }
 
@@ -96,10 +104,10 @@ function update()
 		cubeMesh.translateZ( -moveDistance );
     }
 
-    if(isosp) {
-        isosp.rotation.x += delta/2;
-        isosp.rotation.z += delta;
-    }
+    // if(isosp) {
+    //     isosp.rotation.x += delta/2;
+    //     isosp.rotation.z += delta;
+    // }
 
     popTimer -= delta;
     if(popTimer <= 0 && popping.length != isosp.children.length) {
