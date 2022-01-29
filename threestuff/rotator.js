@@ -17,6 +17,8 @@ var basetree;
 
 var isosp;
 
+var colorPalette = [0x391463, 0x3A0842, 0xD1462F, 0x34F6F2, 0x2541B2]
+
 loader.load('iso4.glb', function ( gltf ) {
 
     isosp = gltf.scene;
@@ -30,6 +32,11 @@ loader.load('iso4.glb', function ( gltf ) {
         isosp.add( pivot );
         pivot.attach(face);
         // face.scale.set(3,3,3);
+        
+        const mat = new THREE.MeshBasicMaterial({
+            color: 0x000000
+        });
+        face.children[0].material = mat;
     }
     isosp.scale.set(3,3,3);
     isosp.rotation.x = 0.5
@@ -92,6 +99,13 @@ var amountRotated = {};
 var originalpos = {};
 var popDistance = {};
 
+var levels = {
+    0.3: true,
+    0.45: true,
+    0.6: true,
+    0.75 : true
+};
+
 function update()
 {
 	var delta = clock.getDelta(); // seconds.
@@ -116,9 +130,36 @@ function update()
         popstart[index] = time;
         amountMoved[index] = 0;
         amountRotated[index] = 0;
-        popDistance[index] = Math.random()/2 + 0.3;
+
+        var dist;
+        var keys = Object.keys(levels);
+        var isFree = false;
+        for(var key of keys) {
+            if(levels[key]) {
+                isFree = true;
+            }
+        }
+        if(isFree) {
+            do {
+                dist = keys[Math.floor(Math.random()*keys.length)];
+            } while(!levels[dist]);
+        
+            levels[dist] = false;
+        } else {
+            dist = 0.9;
+        }
+        console.log("popping at distance: " + dist)
+        popDistance[index] = dist;
+
         originalpos[index] = isosp.children[index].children[0].position.clone();
         // console.log(originalpos[index])
+
+        
+
+        const mat = new THREE.MeshBasicMaterial({
+            color: colorPalette[Math.floor(Math.random()*colorPalette.length)]
+        });
+        // isosp.children[index].children[0].children[0].material = mat;
     }
     var toRemove = [];
     for(var i of popping) {
@@ -148,6 +189,7 @@ function update()
         popping.splice(popping.indexOf(i), 1)
         amountRotated[i] = 0
         amountMoved[i] = 0
+        levels[popDistance[i]] = true;
     }
 }
 
