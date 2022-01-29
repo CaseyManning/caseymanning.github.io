@@ -83,7 +83,7 @@ function animate()
 	update();
 }
 
-var popTimer = 3;
+var popTimer = 1;
 
 var popping = [];
 var popstart = {};
@@ -122,28 +122,24 @@ function update()
     }
     var toRemove = [];
     for(var i of popping) {
-        if(delta > 0) {
+        if(delta < 1) {
             var elem = isosp.children[i].children[0];
-            if(amountMoved[i] < popDistance[i]) {
+            if(amountMoved[i] < popDistance[i] && amountRotated[i] == 0) {
                 var moveDistance = 1 * delta;
                 elem.translateOnAxis(elem.position, moveDistance);
                 amountMoved[i] += moveDistance;
             } else if(amountRotated[i] < 2*Math.PI) {
-                if(amountMoved[i] > popDistance[i]) {
-                    elem.translateOnAxis(elem.position, amountMoved[i] - popDistance[i]);
-                    amountMoved[i] = popDistance[i];
-                }
                 elem.parent.rotateOnWorldAxis(new THREE.Vector3(-elem.position.y, elem.position.z, -elem.position.x).normalize(), delta)
                 // rotateAboutPoint(elem, new THREE.Vector3(0,0,0), vector, delta, true);
                 amountRotated[i] += delta;
-            } else if(amountMoved[i] < 2*popDistance[i]) {
+            } else if(amountMoved[i] > 0) {
                 var moveDistance = 1 * delta;   
                 elem.translateOnAxis(elem.position, -moveDistance);
-                amountMoved[i] += moveDistance;
+                amountMoved[i] -= moveDistance;
             } else {
-                elem.translateOnAxis(elem.position,  2*popDistance[i] -amountMoved[i]);
+                elem.translateOnAxis(elem.position, -amountMoved[i]);
                 elem.parent.rotation.set(0,0,0);
-                elem.position = originalpos[i];
+                // elem.position = originalpos[i];
                 toRemove.push(i);
             }
         }
