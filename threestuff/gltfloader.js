@@ -1,3 +1,5 @@
+import * as THREE from 'three';
+
 THREE.GLTFLoader = ( function () {
 
 	function GLTFLoader( manager ) {

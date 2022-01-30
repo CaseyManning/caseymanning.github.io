@@ -1,3 +1,5 @@
+import * as THREE from './three.min.js';
+
 var scene = new THREE.Scene();
 
 var boxGeometry = new THREE.BoxGeometry(2, 2, 2);
@@ -72,6 +74,7 @@ var renderer = new THREE.WebGLRenderer({
     antialias:true
 });
 
+composer = new EffectComposer( renderer );
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
@@ -151,10 +154,10 @@ function update()
         console.log("popping at distance: " + dist)
         popDistance[index] = dist;
 
-        originalpos[index] = isosp.children[index].children[0].position.clone();
+        if(!originalpos[index]) {
+            originalpos[index] = isosp.children[index].children[0].position.clone();
+        }
         // console.log(originalpos[index])
-
-        
 
         const mat = new THREE.MeshBasicMaterial({
             color: colorPalette[Math.floor(Math.random()*colorPalette.length)]
@@ -180,7 +183,7 @@ function update()
             } else {
                 elem.translateOnAxis(elem.position, -amountMoved[i]);
                 elem.parent.rotation.set(0,0,0);
-                // elem.position = originalpos[i];
+                elem.position = originalpos[i];
                 toRemove.push(i);
             }
         }
