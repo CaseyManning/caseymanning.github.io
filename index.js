@@ -90,3 +90,14 @@ function expand(img) {
     document.getElementById("fullsc").style.opacity = "1";
 
 }
+
+window.onload = function() {
+    if(window.location.href.includes("artwork")) {
+        console.log("showing")
+        show("artwork", document.getElementById("artworkbutton"));
+    }
+    if(window.location.href.includes("games")) {
+        console.log("showing")
+        show("games", document.getElementById("gamesbutton"));
+    }
+};
