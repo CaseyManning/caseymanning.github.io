@@ -37,109 +37,110 @@
             </div>
             <div class="halfscreen">
                 <img src="headerImage.webp" id="coverimg">
+                <div id="content" class="content hidden" style="height: 100%;">
+                    <!-- <div style="background-color: #999; width: 2px; height: 70%; position: fixed; left: 0; top: 0; bottom: 0; margin: auto;"></div> -->
+                    <div class="hidden" id="videos">
+                        <video width="500" height="500" controls loop>
+                            <source src="videos/train1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
+                        <video width="500" height="500" controls loop>
+                            <source src="videos/alienHead.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
+                        <video width="500" height="720" controls loop>
+                            <source src="videos/drone.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
+                        <video width="500" height="500" controls loop>
+                            <source src="videos/catWithFlower.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
+                        <video width="500" height="500" controls loop>
+                            <source src="videos/windowplant.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
+                        <video width="500" height="500" controls loop>
+                            <source src="videos/cat.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="hidden flexy" id="demoreel">
+                        <video controls style="width: 90%;">
+                            <source src="DemoReel.mp4" type="video/mp4" style="outline:none; width:100%; height:100%;">
+                        Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="hidden flexy" id="links">
+                        <a class="card clickablecard" target="_blank" rel="noopener noreferrer" href="https://github.com/CaseyManning/" style="margin-left: 20%; margin-right: 20%;">
+                            <p class="cardtitle">Github</p>
+                        </a>
+                        <a class="card clickablecard" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/caseytmanning/" style="margin-left: 20%; margin-right: 20%;">
+                            <p class="cardtitle">Linkedin</p>
+                        </a>
+                        <a class="card clickablecard" target="_blank" rel="noopener noreferrer" href="Resume_CaseyManning.pdf" style="margin-left: 20%; margin-right: 20%;">
+                            <p class="cardtitle">Resume</p>
+                        </a>
+                    </div>
+                    <div id="artwork" class="hidden flexy" style="position: relative; flex-direction: row; padding: 20px; height: calc(100% - 40px);">
+                        <div class="artcol" id="ac1">
+                            <img src="images/148Robot.png" onclick="expand(this)">
+                            <img src="images/looker.png" onclick="expand(this)">
+                            <img src="images/voloombetter.png" onclick="expand(this)">
+                            <img src="images/Columns.png" onclick="expand(this)">
+                            <img src="images/succ5.png" onclick="expand(this)">
+                            <img src="images/hologram.jpg" onclick="expand(this)">
+                            <img src="images/hoverBike.png" onclick="expand(this)">
+                            <img src="images/ladybugRobot.png" onclick="expand(this)">
+                            <img src="images/Spaceship.png" onclick="expand(this)">
+                            <img src="images/darkCity.png" onclick="expand(this)">
+                            <img src="images/crawlypoly4.png" onclick="expand(this)">
+                            <img src="images/villageSquareFinal.png" onclick="expand(this)">
+                        </div>
+                        <div class="artcol" id="ac2">
+                            <img src="images/bigBuilding.PNG" onclick="expand(this)">
+                            <img src="images/therig.png" onclick="expand(this)">
+                            <img src="images/lifters.png" onclick="expand(this)">
+                            <img src="images/bakery.png" onclick="expand(this)">
+                            <img src="images/bubbles.png" onclick="expand(this)">
+                            <img src="images/robotheadNewer.png" onclick="expand(this)">
+                            <img src="images/dronerender2.png" onclick="expand(this)">
+                            <img src="images/ghibliFinal.png" onclick="expand(this)">
+                            <img src="images/structure.png" onclick="expand(this)">
+                            <img src="images/smoothies.png" onclick="expand(this)">
+                            <img src="images/up.png" onclick="expand(this)">
+                        </div>
+                        <div id="fullsc" class="hidden" onclick="hideFocused()">
+                            <img id="focusedimg" onclick="event.stopPropagation()" class="centered" src="images/bigBuilding.PNG">
+                            <svg id="leftarrow" onclick="leftClicked(event)" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" style="fill: none;" width="50px" height="90px"><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(106, 106, 106); fill: none;" d=""/><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(74, 74, 74); fill: none;" d=""/><path style="stroke-width: 10px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); fill: none;" d="M45,15 L45,15 L15,45 L45,75 "/></svg>
+                            <svg id="rightarrow" onclick="rightClicked(event)" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" style="fill: none;" width="50px" height="90px"><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(106, 106, 106); fill: none;" d=""/><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(74, 74, 74); fill: none;" d=""/><path style="stroke-width: 10px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); fill: none;" d="M45,15 L45,15 L15,45 L45,75 "/></svg>
+                        </div>
+                    </div>
+                    <div id="games" class="flexy hidden">
+                        <div class="gameContent">
+                            <div class="gameCard" onclick="window.location='https://spaaace.itch.io/bunny'">
+                                <img src="images/rBi2SO.png">
+                                <p class="gameTitle">Diggy Bunny</p>
+                            </div>
+                            <div class="gameCard" onclick="window.location='https://spaaace.itch.io/journey'">
+                                <img src="images/journeyThumbnail.png">
+                                <p class="gameTitle">Journey Around My Room</p>
+                            </div>
+                            <div class="gameCard" onclick="window.location='https://apps.apple.com/us/app/amanu/id1142733267'">
+                                <img src="images/amanuThumb.png">
+                                <p class="gameTitle">Amanu</p>
+                            </div>
+                            <div class="gameCard" onclick="window.location='https://spaaace.itch.io/surrounded'">
+                                <img src="images/surroundedThumb.png">
+                                <p class="gameTitle">Surrounded</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="content" class="content hidden" style="height: 100%;">
-            <div style="background-color: #999; width: 2px; height: 70%; position: fixed; left: 0; top: 0; bottom: 0; margin: auto;"></div>
-            <div class="hidden" id="videos">
-                <video width="500" height="500" controls loop>
-                    <source src="videos/train1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-                <video width="500" height="500" controls loop>
-                    <source src="videos/alienHead.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-                <video width="500" height="720" controls loop>
-                    <source src="videos/drone.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-                <video width="500" height="500" controls loop>
-                    <source src="videos/catWithFlower.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-                <video width="500" height="500" controls loop>
-                    <source src="videos/windowplant.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-                <video width="500" height="500" controls loop>
-                    <source src="videos/cat.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="hidden flexy" id="demoreel">
-                <video controls style="width: 90%;">
-                    <source src="DemoReel.mp4" type="video/mp4" style="outline:none; width:100%; height:100%;">
-                Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="hidden flexy" id="links">
-                <a class="card clickablecard" target="_blank" rel="noopener noreferrer" href="https://github.com/CaseyManning/" style="margin-left: 20%; margin-right: 20%;">
-                    <p class="cardtitle">Github</p>
-                </a>
-                <a class="card clickablecard" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/caseytmanning/" style="margin-left: 20%; margin-right: 20%;">
-                    <p class="cardtitle">Linkedin</p>
-                </a>
-                <a class="card clickablecard" target="_blank" rel="noopener noreferrer" href="Resume_CaseyManning.pdf" style="margin-left: 20%; margin-right: 20%;">
-                    <p class="cardtitle">Resume</p>
-                </a>
-            </div>
-            <div id="artwork" class="hidden flexy" style="position: relative; flex-direction: row; padding: 20px; height: calc(100% - 40px);">
-                <div class="artcol" id="ac1">
-                    <img src="images/148Robot.png" onclick="expand(this)">
-                    <img src="images/looker.png" onclick="expand(this)">
-                    <img src="images/voloombetter.png" onclick="expand(this)">
-                    <img src="images/Columns.png" onclick="expand(this)">
-                    <img src="images/succ5.png" onclick="expand(this)">
-                    <img src="images/hologram.jpg" onclick="expand(this)">
-                    <img src="images/hoverBike.png" onclick="expand(this)">
-                    <img src="images/ladybugRobot.png" onclick="expand(this)">
-                    <img src="images/Spaceship.png" onclick="expand(this)">
-                    <img src="images/darkCity.png" onclick="expand(this)">
-                    <img src="images/crawlypoly4.png" onclick="expand(this)">
-                    <img src="images/villageSquareFinal.png" onclick="expand(this)">
-                </div>
-                <div class="artcol" id="ac2">
-                    <img src="images/bigBuilding.PNG" onclick="expand(this)">
-                    <img src="images/therig.png" onclick="expand(this)">
-                    <img src="images/lifters.png" onclick="expand(this)">
-                    <img src="images/bakery.png" onclick="expand(this)">
-                    <img src="images/bubbles.png" onclick="expand(this)">
-                    <img src="images/robotheadNewer.png" onclick="expand(this)">
-                    <img src="images/dronerender2.png" onclick="expand(this)">
-                    <img src="images/ghibliFinal.png" onclick="expand(this)">
-                    <img src="images/structure.png" onclick="expand(this)">
-                    <img src="images/smoothies.png" onclick="expand(this)">
-                    <img src="images/up.png" onclick="expand(this)">
-                </div>
-                <div id="fullsc" class="hidden" onclick="hideFocused()">
-                    <img id="focusedimg" onclick="event.stopPropagation()" class="centered" src="images/bigBuilding.PNG">
-                    <svg id="leftarrow" onclick="leftClicked(event)" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" style="fill: none;" width="50px" height="90px"><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(106, 106, 106); fill: none;" d=""/><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(74, 74, 74); fill: none;" d=""/><path style="stroke-width: 10px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); fill: none;" d="M45,15 L45,15 L15,45 L45,75 "/></svg>
-                    <svg id="rightarrow" onclick="rightClicked(event)" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" style="fill: none;" width="50px" height="90px"><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(106, 106, 106); fill: none;" d=""/><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(74, 74, 74); fill: none;" d=""/><path style="stroke-width: 10px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); fill: none;" d="M45,15 L45,15 L15,45 L45,75 "/></svg>
-                </div>
-            </div>
-            <div id="games" class="flexy hidden">
-                <div class="gameContent">
-                    <div class="gameCard" onclick="window.location='https://spaaace.itch.io/bunny'">
-                        <img src="images/rBi2SO.png">
-                        <p class="gameTitle">Diggy Bunny</p>
-                    </div>
-                    <div class="gameCard" onclick="window.location='https://spaaace.itch.io/journey'">
-                        <img src="images/journeyThumbnail.png">
-                        <p class="gameTitle">Journey Around My Room</p>
-                    </div>
-                    <div class="gameCard" onclick="window.location='https://apps.apple.com/us/app/amanu/id1142733267'">
-                        <img src="images/amanuThumb.png">
-                        <p class="gameTitle">Amanu</p>
-                    </div>
-                    <div class="gameCard" onclick="window.location='https://spaaace.itch.io/surrounded'">
-                        <img src="images/surroundedThumb.png">
-                        <p class="gameTitle">Surrounded</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
+
         <script src="index.js"></script>
     </body>
 </html>

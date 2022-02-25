@@ -30,13 +30,15 @@
 .halfscreen {
     width: 50%;
     display: flex;
-    /* transition: 0.7s cub; */
+    
 }
+
 .halfscreen:nth-of-type(1) {
     padding-left: 100px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    transition: 0.7s;
 }
 
 .halfscreen:nth-of-type(2) {
@@ -78,7 +80,8 @@ video {
     flex-direction: column;
     flex-wrap: nowrap;
     position: absolute;
-    margin-left: 320px;
+    overflow-y: scroll;
+    /* margin-left: 320px; */
     align-items: center;
 }
 
