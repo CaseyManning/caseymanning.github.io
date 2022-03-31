@@ -38,7 +38,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    transition: 0.7s;
+    /* transition: 0.7s; */
 }
 
 .halfscreen:nth-of-type(2) {
@@ -209,17 +209,14 @@ li a:hover::after {
     flex-wrap: wrap;
     align-items: flex-start !important;
     justify-content: center;
-    width: 80%;
-    height: 80%;
     height: min-content;
+    margin-top: 30px;
 }
 
 .gameCard {
     width: 300px;
     height: min-content;
-    margin: 40px;
-    margin-bottom: 50px;
-    margin-top: 0;
+    margin: 25px 40px;
     cursor: pointer;
 }
 .gameCard > img {
@@ -233,7 +230,9 @@ li a:hover::after {
     margin-top: 5px;
 }
 
-
+#games {
+    justify-content: flex-start;
+}
 
 .over {
     z-index: 5;
