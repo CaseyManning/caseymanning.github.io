@@ -206,6 +206,8 @@ li a:hover::after {
 
 .gameContent {
     display: flex;
+    flex: 1 0 26%;
+    flex-basis: 26%;
     flex-wrap: wrap;
     align-items: flex-start !important;
     justify-content: center;
@@ -222,12 +224,36 @@ li a:hover::after {
 .gameCard > img {
     width: inherit;
     border-radius: 15px;
+    transition: 0.3s;
 }
 .gameTitle {
     font-family: "Roboto Slab";
     font-size: 14pt;
     margin-left: 10px;
     margin-top: 5px;
+}
+
+.vidslice {
+    width: calc(33% - 20px);
+    /* transform: skew(10deg); */
+    overflow: hidden;
+    height: calc(100% - 30px);
+    filter: brightness(1.1) grayscale(0.4);
+    margin: 7.5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.vidslice:first-of-type {
+    margin-left: 15px;
+}
+.vidslice:last-of-type {
+    margin-right: 15px;
+}
+.vidslice > img {
+    /* transform: skew(-10deg); */
+    object-fit: fill;
+    height: 100%;
 }
 
 #games {
@@ -297,4 +323,8 @@ li a:hover::after {
     left: 0 !important;
     bottom: 0 !important;
     right: 0 !important;
+}
+
+.gameCard > img:hover {
+    transform: scale(1.025);
 }

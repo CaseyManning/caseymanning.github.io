@@ -1,0 +1,73 @@
+<head>
+    <link rel="stylesheet" href="indexv2.css">
+</head>
+<body>
+    <div id="navbar">
+        <a id="name" href="/">Casey Manning</p>
+        <div id="nav">
+            <a href="portfolio.html">artwork</a>
+            <a href="Resume_CaseyManning.pdf">resume</a>
+            <a href="https://youtu.be/YZse5aZfZYY">demo reel</a>
+        </div>
+    </div>
+    <div style="height: 100px;"></div>
+    <div id="content-portfolio">
+        <div class="artcol" id="ac1">
+            <video width="300" height="300" loop autoplay muted>
+                <source src="videos/windowplant.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <video width="300" height="420" loop autoplay muted style="margin: -5px 0;">
+                <source src="videos/drone.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <img src="images/148Robot.png" onclick="expand(this)">
+            <img src="images/looker.png" onclick="expand(this)">
+            <img src="images/voloombetter.png" onclick="expand(this)">
+            <img src="images/Columns.png" onclick="expand(this)">
+            <img src="images/succ5.png" onclick="expand(this)">
+            <img src="images/hologram.jpg" onclick="expand(this)">
+            <img src="images/hoverBike.png" onclick="expand(this)">
+            <img src="images/ladybugRobot.png" onclick="expand(this)">
+            <img src="images/Spaceship.png" onclick="expand(this)">
+            <img src="images/darkCity.png" onclick="expand(this)">
+            <video width="300" height="300" loop autoplay muted>
+                <source src="videos/cat.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <img src="images/crawlypoly4.png" onclick="expand(this)">
+            <img src="images/villageSquareFinal.png" onclick="expand(this)">
+        </div>
+        <div class="artcol" id="ac2">
+            <img src="images/bigBuilding.PNG" onclick="expand(this)">
+            <img src="images/therig.png" onclick="expand(this)">
+            <img src="images/lifters.png" onclick="expand(this)">
+            <video width="300" height="300" loop autoplay muted>
+                <source src="videos/train1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <img src="images/bakery.png" onclick="expand(this)">
+            <video width="300" height="300" loop autoplay muted>
+                <source src="videos/alienHead.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <img src="images/bubbles.png" onclick="expand(this)">
+            <img src="images/robotheadNewer.png" onclick="expand(this)">
+            <img src="images/dronerender2.png" onclick="expand(this)">
+            <img src="images/ghibliFinal.png" onclick="expand(this)">
+            <video width="300" height="300" loop autoplay muted>
+                <source src="videos/catWithFlower.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <img src="images/structure.png" onclick="expand(this)">
+            <img src="images/smoothies.png" onclick="expand(this)">
+            <img src="images/up.png" onclick="expand(this)">
+        </div>
+    </div>
+    <div id="fullsc" class="hidden" onclick="hideFocused()">
+        <img id="focusedimg" onclick="event.stopPropagation()" class="centered" src="images/bigBuilding.PNG">
+        <svg id="leftarrow" onclick="leftClicked(event)" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" style="fill: none;" width="50px" height="90px"><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(106, 106, 106); fill: none;" d=""/><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(74, 74, 74); fill: none;" d=""/><path style="stroke-width: 10px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); fill: none;" d="M45,15 L45,15 L15,45 L45,75 "/></svg>
+        <svg id="rightarrow" onclick="rightClicked(event)" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" style="fill: none;" width="50px" height="90px"><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(106, 106, 106); fill: none;" d=""/><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(74, 74, 74); fill: none;" d=""/><path style="stroke-width: 10px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); fill: none;" d="M45,15 L45,15 L15,45 L45,75 "/></svg>
+    </div>
+    <script src="index.js"></script>
+</body>

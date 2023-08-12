@@ -2,12 +2,6 @@ var selectedScene = "";
 
 function show(name, button) {
 
-    // if(parseInt(document.getElementById(name).style.maxHeight) > 0) {
-    //     button.classList.remove("selected");
-    //     hideall();
-    //     return;
-    // }
-
     if(button.classList.contains("selected")) {
         document.getElementsByClassName("halfscreen")[0].classList.remove("shrunk");
         document.getElementById("coverimg").classList.remove("hidden");
@@ -55,6 +49,9 @@ document.addEventListener('keydown', (e) => {
   function leftClicked(e) {
     if(sourceImage.previousElementSibling) {
         sourceImage = sourceImage.previousElementSibling;
+        if(sourceImage.nodeName == "VIDEO") {
+            sourceImage = sourceImage.previousElementSibling;
+        }
     } else {
         if(sourceImage.parentElement.id == "ac1") {
             sourceImage = document.getElementById("ac2").lastElementChild;
@@ -69,6 +66,10 @@ document.addEventListener('keydown', (e) => {
 function rightClicked(e) {
     if(sourceImage.nextElementSibling) {
         sourceImage = sourceImage.nextElementSibling;
+        if(sourceImage.nodeName == "VIDEO") {
+            sourceImage = sourceImage.nextElementSibling;
+        }
+        
     } else {
         if(sourceImage.parentElement.id == "ac1") {
             sourceImage = document.getElementById("ac2").firstElementChild;    

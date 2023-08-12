@@ -1,79 +1,79 @@
-<html bgcolor="#FFFFFF">
-<head>
-    <meta name="viewport" content="width=device-width">
-</head>
-<link rel="stylesheet" type="text/css" href="artwork.css" />
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+    <head>
+        <title>casey's portfolio</title>
+        <meta property="og:image" content="https://caseymanning.github.io/images/ghibliFinal.png"/>
+        <meta property="og:title" content="Casey Manning - Portfolio"/>
+        <meta property="og:site_name" content="caseymanning.github.io"/>
+        <meta property="og:description" content="" />
+        <meta charset="utf-8">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5LWPJQQ753"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5LWPJQQ753');
+        </script>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="screenSplit">
+            <div class="halfscreen">
+                <h1>Casey Manning</h1>
+                <ul>
+                    <!-- <li><a href="#" onclick="show('demoreel', this)">demo reel</a></li> -->
+                    <li><a href="#" onclick="show('artwork', this)" id="artworkbutton">artwork</a></li>
+                    <li><a href="#" onclick="show('videos', this)">animations</a></li>
+                    <li><a href="#" onclick="show('games', this)" id="gamesbutton">games</a></li>
+                    <li><a href="#" onclick="show('VR', this)" id="gamesbutton">VR</a></li>
+                    <hr style="width: 100px; height: 2px; border: none; background-color: #aaa;">
+                    <li><a href="https://youtu.be/YZse5aZfZYY">demo reel</a></li>
+                    <li><a href="Resume_CaseyManning.pdf">resume</a></li>
+                    <li><a href="https://www.linkedin.com/in/caseytmanning/">linkedin</a></li>
 
-<div id="overlay" onclick="unExpand()" hidden="true"></div>
-<img src="images/voloombetter.png" id="expanded" hidden="true"></div>
-
-<body bgcolor="#222222" id="bod">
-    <script src="artwork.js"></script>
-    <!-- <div class="top"> -->
-        <center>
-            <br>
-            <h1>
-                Artwork
-            </h1>
-            <br>
-        </center>
-    <!-- </div> -->
-
-    <hr style="border: 0; border-top: 2px solid #ccc; width: 50%;">
-
-
-    <br>
-    <br>
-
-    <div class="row">
-        <div class="column">
-            <img src="images/looker.png" onclick="expand(this.src)">
-            <img src="images/voloombetter.png" onclick="expand(this.src)">
-            <img src="images/Columns.png" onclick="expand(this.src)">
-            <img src="images/succ5.png" onclick="expand(this.src)">
-            <img src="images/hologram.jpg" onclick="expand(this.src)">
-            <img src="images/hoverBike.png" onclick="expand(this.src)">
-            <!-- <img src="images/vessels.png" onclick="expand(this.src)"> -->
-            <img src="images/ladybugRobot.png" onclick="expand(this.src)">
-            <img src="images/Spaceship.png" onclick="expand(this.src)">
-            <!-- <img src="images/balcony.png" onclick="expand(this.src)">
-            <img src="images/motorcycle.png" onclick="expand(this.src)"> -->
-            <img src="images/darkCity.png" onclick="expand(this.src)">
-            <!-- <img src="images/Shipwreck.png" onclick="expand(this.src)"> -->
-            <img src="images/crawlypoly4.png" onclick="expand(this.src)">
-            <img src="images/villageSquareFinal.png" onclick="expand(this.src)">
-            <!-- <img src="images/sushiFinal.png" onclick="expand(this.src)"> -->
-            <!-- <img src="images/Portalesque.png" onclick="expand(this.src)"> -->
+                </ul>
+            </div>
+            <div class="halfscreen">
+                <img src="headerImage.webp" id="coverimg">
+                <div id="content" class="content" style="height: 100%;">
+                    <div id="artwork" class="flexy" style="position: relative; flex-direction: row; padding: 20px; height: calc(100% - 40px);">
+                        <div class="artcol" id="ac1">
+                            <img src="images/148Robot.png" onclick="expand(this)">
+                            <img src="images/looker.png" onclick="expand(this)">
+                            <img src="images/voloombetter.png" onclick="expand(this)">
+                            <img src="images/Columns.png" onclick="expand(this)">
+                            <img src="images/succ5.png" onclick="expand(this)">
+                            <img src="images/hologram.jpg" onclick="expand(this)">
+                            <img src="images/hoverBike.png" onclick="expand(this)">
+                            <img src="images/ladybugRobot.png" onclick="expand(this)">
+                            <img src="images/Spaceship.png" onclick="expand(this)">
+                            <img src="images/darkCity.png" onclick="expand(this)">
+                            <img src="images/crawlypoly4.png" onclick="expand(this)">
+                            <img src="images/villageSquareFinal.png" onclick="expand(this)">
+                        </div>
+                        <div class="artcol" id="ac2">
+                            <img src="images/bigBuilding.PNG" onclick="expand(this)">
+                            <img src="images/therig.png" onclick="expand(this)">
+                            <img src="images/lifters.png" onclick="expand(this)">
+                            <img src="images/bakery.png" onclick="expand(this)">
+                            <img src="images/bubbles.png" onclick="expand(this)">
+                            <img src="images/robotheadNewer.png" onclick="expand(this)">
+                            <img src="images/dronerender2.png" onclick="expand(this)">
+                            <img src="images/ghibliFinal.png" onclick="expand(this)">
+                            <img src="images/structure.png" onclick="expand(this)">
+                            <img src="images/smoothies.png" onclick="expand(this)">
+                            <img src="images/up.png" onclick="expand(this)">
+                        </div>
+                        <div id="fullsc" class="hidden" onclick="hideFocused()">
+                            <img id="focusedimg" onclick="event.stopPropagation()" class="centered" src="images/bigBuilding.PNG">
+                            <svg id="leftarrow" onclick="leftClicked(event)" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" style="fill: none;" width="50px" height="90px"><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(106, 106, 106); fill: none;" d=""/><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(74, 74, 74); fill: none;" d=""/><path style="stroke-width: 10px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); fill: none;" d="M45,15 L45,15 L15,45 L45,75 "/></svg>
+                            <svg id="rightarrow" onclick="rightClicked(event)" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" style="fill: none;" width="50px" height="90px"><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(106, 106, 106); fill: none;" d=""/><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(74, 74, 74); fill: none;" d=""/><path style="stroke-width: 10px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); fill: none;" d="M45,15 L45,15 L15,45 L45,75 "/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="column">
-            <img src="images/therig.png" onclick="expand(this.src)">
-            <img src="images/lifters.png" onclick="expand(this.src)">
-            <img src="images/bakery.png" onclick="expand(this.src)">
-            <img src="images/bubbles.png" onclick="expand(this.src)">
-            <img src="images/robotheadNewer.png" onclick="expand(this.src)">
-            <img src="images/dronerender2.png" onclick="expand(this.src)">
-            <img src="images/ghibliFinal.png" onclick="expand(this.src)">
-            <img src="images/structure.png" onclick="expand(this.src)">
-            <img src="images/smoothies.png" onclick="expand(this.src)">
-            <img src="images/up.png" onclick="expand(this.src)">
-            <!-- <img src="images/roboman.png" onclick="expand(this.src)"> -->
-            <!-- <img src="images/skyshacks.png" onclick="expand(this.src)"> -->
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <!-- <div class="bottom"> -->
-        <center>
-            <a href=index.html>Back</a>
-            <br>
-            <br>
-            <br>
-        </center>
-    </div>
-
-</body>
-
+        <script src="index.js"></script>
+        <!-- <script>show("artwork", document.getElementById("artworkbutton"));</script> -->
+    </body>
 </html>
