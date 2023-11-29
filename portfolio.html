@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="indexv2.css">
 
     <style>
-        @media (pointer:none), (pointer:coarse), (max-resolution: 1dppx) {
+        @media (pointer:none), (pointer:coarse), (max-resolution: 1dppx), (max-width: 400) {
             #content-portfolio {
                 flex-direction: column;
             }
@@ -11,7 +11,12 @@
             }
             video {
                 height: auto;
-                margin-bottom: 40px !important;
+                width: 100%;
+                margin-bottom: 60px !important;
+            }
+            .artcol > img {
+                border-radius: 0;
+                margin-bottom: 60px;
             }
     }
     </style>
