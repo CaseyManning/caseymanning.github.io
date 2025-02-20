@@ -49,9 +49,6 @@ document.addEventListener('keydown', (e) => {
   function leftClicked(e) {
     if(sourceImage.previousElementSibling) {
         sourceImage = sourceImage.previousElementSibling;
-        if(sourceImage.nodeName == "VIDEO") {
-            sourceImage = sourceImage.previousElementSibling;
-        }
     } else {
         if(sourceImage.parentElement.id == "ac1") {
             sourceImage = document.getElementById("ac2").lastElementChild;
@@ -60,9 +57,23 @@ document.addEventListener('keydown', (e) => {
         }
     }
 
-    document.getElementById("focusedimg").src = sourceImage.src;
+    updateSource();
     e.stopPropagation();
 }
+
+function updateSource() {
+    if(sourceImage.nodeName == "VIDEO") {
+        document.getElementById("focusedvideo").src = sourceImage.querySelector("source").src;
+        document.getElementById("focusedvideo").classList.remove("hidden");
+        document.getElementById("focusedimg").classList.add("hidden");
+    } else {
+        console.log("not video")
+        document.getElementById("focusedimg").src = sourceImage.src;
+        document.getElementById("focusedimg").classList.remove("hidden");
+        document.getElementById("focusedvideo").classList.add("hidden");
+    }
+}
+
 function rightClicked(e) {
     if(sourceImage.nextElementSibling) {
         sourceImage = sourceImage.nextElementSibling;
@@ -78,18 +89,35 @@ function rightClicked(e) {
         }
     }
 
-    document.getElementById("focusedimg").src = sourceImage.src;
+    updateSource();
     e.stopPropagation();
 }
 
-function expand(img) {
-    console.log(img)
-    sourceImage = img;
+function expand(element) {
+    console.log(element)
     var cimg = document.getElementById("focusedimg")
-    cimg.src  = img.src;
+    var focusedvideo = document.getElementById("focusedvideo")
+
+    if(element.nodeName == "VIDEO") {
+        const video = element;
+        console.log(video)
+        sourceImage = video;
+        
+        focusedvideo.querySelector("source").src = video.querySelector("source").src;
+        focusedvideo.load();
+        focusedvideo.play();
+        focusedvideo.classList.remove("hidden");
+        cimg.classList.add("hidden");   
+    } else {
+        const img = element;
+        console.log(img)
+        sourceImage = img;
+        cimg.src  = img.src;
+        focusedvideo.classList.add("hidden");
+        cimg.classList.remove("hidden");
+    }
     document.getElementById("fullsc").classList.remove("hidden");
     document.getElementById("fullsc").style.opacity = "1";
-
 }
 
 window.onload = function() {

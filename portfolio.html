@@ -36,16 +36,20 @@
     <div style="height: 100px;"></div>
     <div id="content-portfolio">
         <div class="artcol" id="ac1">
-            <video width="300" height="300" loop autoplay muted playsinline>
+            <video width="300" height="170" loop autoplay muted playsinline onclick="expand(this)">
+                <source src="videos/angelflap40000-0059.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <video width="300" height="300" loop autoplay muted playsinline onclick="expand(this)">
                 <source src="videos/windowplant.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
-            <video width="300" height="420" loop autoplay muted playsinline style="margin: -5px 0;">
+            <video width="300" height="420" loop autoplay muted playsinline onclick="expand(this)" style="margin: -5px 0;">
                 <source src="videos/drone.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
             <img src="images/148Robot.png" onclick="expand(this)">
-            <video width="300" height="300" loop autoplay muted playsinline>
+            <video width="300" height="300" loop autoplay muted playsinline onclick="expand(this)">
                 <source src="videos/holo_bunny.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
@@ -58,7 +62,7 @@
             <img src="images/ladybugRobot.png" onclick="expand(this)">
             <img src="images/Spaceship.png" onclick="expand(this)">
             <img src="images/darkCity.png" onclick="expand(this)">
-            <video width="300" height="300" loop autoplay muted playsinline>
+            <video width="300" height="300" loop autoplay muted playsinline onclick="expand(this)">
                 <source src="videos/cat.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
@@ -69,12 +73,12 @@
             <img src="images/bigBuilding.PNG" onclick="expand(this)">
             <img src="images/therig.png" onclick="expand(this)">
             <img src="images/lifters.png" onclick="expand(this)">
-            <video width="300" height="300" loop autoplay muted playsinline>
+            <video width="300" height="300" loop autoplay muted playsinline onclick="expand(this)">
                 <source src="videos/train1.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
             <img src="images/bakery.png" onclick="expand(this)">
-            <video width="300" height="300" loop autoplay muted playsinline>
+            <video width="300" height="300" loop autoplay muted playsinline onclick="expand(this)">
                 <source src="videos/alienHead.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
@@ -82,7 +86,7 @@
             <img src="images/robotheadNewer.png" onclick="expand(this)">
             <img src="images/dronerender2.png" onclick="expand(this)">
             <img src="images/ghibliFinal.png" onclick="expand(this)">
-            <video width="300" height="300" loop autoplay muted playsinline>
+            <video width="300" height="300" loop autoplay muted playsinline onclick="expand(this)">
                 <source src="videos/catWithFlower.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
@@ -93,6 +97,10 @@
     </div>
     <div id="fullsc" class="hidden" onclick="hideFocused()">
         <img id="focusedimg" onclick="event.stopPropagation()" class="centered" src="images/bigBuilding.PNG">
+        <video id="focusedvideo" class="centered" width="300" height="300" loop autoplay muted playsinline>
+            <source src="videos/train1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
         <svg id="leftarrow" onclick="leftClicked(event)" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" style="fill: none;" width="50px" height="90px"><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(106, 106, 106); fill: none;" d=""/><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(74, 74, 74); fill: none;" d=""/><path style="stroke-width: 10px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); fill: none;" d="M45,15 L45,15 L15,45 L45,75 "/></svg>
         <svg id="rightarrow" onclick="rightClicked(event)" xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" style="fill: none;" width="50px" height="90px"><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(106, 106, 106); fill: none;" d=""/><path style="stroke-width: 15px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(74, 74, 74); fill: none;" d=""/><path style="stroke-width: 10px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); fill: none;" d="M45,15 L45,15 L15,45 L45,75 "/></svg>
     </div>
