@@ -57,7 +57,7 @@ async function initScene() {
             scale: 0.2,
             inkColor: inkColor,
             angleStep: 4,
-            angle: 0,
+            angle: 8,
             thickness: 1,
             min: 0.17,
             max: 1,
@@ -111,7 +111,7 @@ async function initScene() {
 
             shader.fragmentShader = shader.fragmentShader.replace(
                 `#include <common>`,
-                `#include <common>
+                /* wgsl */`#include <common>
                 uniform vec2 resolution;
                 uniform sampler2D paperTexture;
                 uniform float scale;
@@ -213,7 +213,7 @@ async function initScene() {
                 float e = .1 * de; 
                 vec2 coords = scale*100.*(vWorldPosition.xy/(de*500.)) + linesNoiseAmplitude * noise(linesNoiseScale*vWorldPosition.xy);
         
-                float border = pow(smoothstep(0.,.25, r), rim);
+                float border = pow(smoothstep(0., .25, r), rim);
                 l *= border;
         
                 r = smoothstep(.8, .8+e, r);
@@ -232,13 +232,14 @@ async function initScene() {
                 ivec2 size = textureSize(paperTexture, 0);
                 vec4 paper = texture(paperTexture, gl_FragCoord.xy / vec2(float(size.x), float(size.y)));
                 if(eye > 0.){
-                    gl_FragColor.rgb = blendDarken(vec3(1), inkColor, 1.-line);
+                    gl_FragColor.rgb = mix(vec3(178/255, 225/255, 237/255), inkColor, line);
                     return;
                 }
                 // if(border < 0.5) {
                 //     border = 0.;
                 // }
-                gl_FragColor.rgb = vec3(border + 0.5);// blendDarken(vec3(1.), inkColor, 1.-line);
+                gl_FragColor.rgb = blendDarken(blendDarken(vec3(1.), inkColor, 1.-line), vec3(border));
+                // gl_FragColor.rgb = vec3(border + 0.5);
                 `
               );
 
@@ -266,14 +267,15 @@ async function initScene() {
                 if(node.name == "eye") {
                     node.material = new LineMaterial({
                         skinning: true,
-                        color: 0x888,
+                        color: 0x555555,
                         
-                    }, 0xd9612e , 1);
+                    }, 0xb2e1ed , 1);
                 } else {
                     node.material = new LineMaterial({
                         skinning: true,
-                        color: 0xff0000,
-                    }, 0x333333);
+                        color: 0xffffff,
+
+                    }, 0xeeeeee);
                 }
             }
         });
@@ -317,7 +319,8 @@ async function initScene() {
     });
 
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    var scale = window.devicePixelRatio;
+    renderer.setSize(window.innerWidth * scale, window.innerHeight * scale);
     renderer.render(scene, camera);
 
     document.body.prepend(renderer.domElement);

@@ -102,6 +102,8 @@ body {
 canvas {
     position: absolute;
     pointer-events: none;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .photogrid {
