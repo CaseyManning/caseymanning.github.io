@@ -323,7 +323,7 @@ async function initScene() {
     renderer.setSize(window.innerWidth * scale, window.innerHeight * scale);
     renderer.render(scene, camera);
 
-    document.body.prepend(renderer.domElement);
+    document.body.appendChild(renderer.domElement);
 
     document.addEventListener('mousemove', onDocumentMouseMove, false);
     window.addEventListener('resize', onWindowResize, false);
