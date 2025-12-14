@@ -1,8 +1,136 @@
-<body>
-  <div style="width: 100%; height: 100%">
-    <img
-      src="vibes/10_jammin.gif"
-      style="width: 100%; height: 100%; object-fit: contain"
-    />
-  </div>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sophia</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #fff;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0;
+        width: 100vmin;
+        height: 100vmin;
+      }
+
+      .face-container {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .face-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .face-eyes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.1s ease-out, filter 0.3s ease-out;
+        pointer-events: none;
+        filter: brightness(1);
+      }
+
+      .grid:hover .face-eyes {
+        filter: brightness(2) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+      }
+
+      .face-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="face-container">
+        <img src="sophia/bg1.jpg" class="face-bg" alt="Background 1" />
+        <img src="sophia/eyes1.png" class="face-eyes" alt="Eyes 1" />
+        <img src="sophia/overlay1.png" class="face-overlay" alt="Overlay 1" />
+      </div>
+      <div class="face-container">
+        <img src="sophia/bg2.JPG" class="face-bg" alt="Background 2" />
+        <img src="sophia/eyes2.png" class="face-eyes" alt="Eyes 2" />
+        <img src="sophia/overlay2.png" class="face-overlay" alt="Overlay 2" />
+      </div>
+      <div class="face-container">
+        <img src="sophia/bg3.JPG" class="face-bg" alt="Background 3" />
+        <img src="sophia/eyes3.png" class="face-eyes" alt="Eyes 3" />
+        <img src="sophia/overlay3.png" class="face-overlay" alt="Overlay 3" />
+      </div>
+      <div class="face-container">
+        <img src="sophia/bg4.JPG" class="face-bg" alt="Background 4" />
+        <img src="sophia/eyes4.png" class="face-eyes" alt="Eyes 4" />
+        <img src="sophia/overlay4.png" class="face-overlay" alt="Overlay 4" />
+      </div>
+    </div>
+
+    <script>
+      const showGif = Math.random() < 0.5;
+
+      if (showGif) {
+        document.body.innerHTML = `
+          <div style="width: 100vw; height: 100vh">
+            <img
+              src="vibes/10_jammin.gif"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
+        `;
+      } else {
+        const eyesElements = document.querySelectorAll(".face-eyes");
+        const maxOffset = 4; // Maximum pixel offset for eye movement
+
+        document.addEventListener("mousemove", (e) => {
+          const centerX = window.innerWidth / 2;
+          const centerY = window.innerHeight / 2;
+
+          // Calculate normalized position from center (-1 to 1)
+          const normalizedX = (e.clientX - centerX) / centerX;
+          const normalizedY = (e.clientY - centerY) / centerY;
+
+          // Apply offset to all eyes
+          const offsetX = normalizedX * maxOffset;
+          const offsetY = normalizedY * maxOffset;
+
+          eyesElements.forEach((eyes) => {
+            eyes.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+          });
+        });
+
+        // Reset eyes when mouse leaves the window
+        document.addEventListener("mouseleave", () => {
+          eyesElements.forEach((eyes) => {
+            eyes.style.transform = "translate(0, 0)";
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
