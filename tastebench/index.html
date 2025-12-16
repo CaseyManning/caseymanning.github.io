@@ -5,7 +5,7 @@
     <div id="outer">
     <div id="container">
         <div id="navbar">
-            <p id="title">a very simple tastebench</p>
+            <p id="title">an attempt at a very simple taste benchmark</p>
         </div>
         <p>
           The following outlines a benchmark that hopefully measures in a very rough way if a language model is able to write "well."
@@ -58,7 +58,7 @@
         <p>
             Now, every model we are testing rates each sentence from 1-100, so we have some granularity.
         </p>
-        <img src="tastebench/original_ratings_scatter2.png" alt="Original ratings"/>
+        <img src="original_ratings_scatter2.png" alt="Original ratings"/>
 
         <!-- <p>
             As we can see, models are not actually great at giving a numerical rating for sentence quality. Sonnet and Opus 4 in particular 
@@ -88,7 +88,7 @@
             Then as described, we asked the models to rate their re-written sentences via the same prompt as the original, and 
             take the ratio of the new score to the old score, or how much better they like the rewritten sentence.
         </p>
-        <img src="tastebench/model_ratios.png" alt="Original ratings"/>
+        <img src="model_ratios.png" alt="Original ratings"/>
         <p>I was suprised to see sonnet 4 have the highest score here by such a large margin, especially compared to sonnet 4.5. Let's look at some of its rewrites:</p>
 
         <table class="rewrites">
@@ -139,20 +139,89 @@
 
           <p>(It's funny that they both come up with the same "particular ache of invisibility" phrase!)</p>
 
-        <p>
-            Another straightforward way of looking at these results would be to ask: "What percent of the time did does the model 
-            try to rewrite the sentence to be better but actually makes it worse according to its own standards?
-        </p>
-        <img src="tastebench/improvement_outcomes.png" alt="Original ratings"/>
-        <p>
-            It's also cool that based on this graph it seems like the largest problem with this benchmark is that its just too easy:
-            almost all the models tested can very consistently write a sentence that they like better than a basically quite good 
-            human sentence.
-        </p>
-        <p> Another detail fo this graph: openai models are way better at giving a more varied scores to sentences, so consequently
-            They have way less instances of "thinks both sentences are exactly the same quality" than the anthropic models. </p>
-        
-        <p>I certainly wouldn't go so far as to say that this is actually measuring taste. In the limit, a model that just absoltuely 
+
+          <p>From this, it's pretty obvious why Sonnet 4 is scoring so much higher than 4.5. Comparing the second rewrite for each model,
+            Sonnet 4 substantially embellished the sentence with "where oil money runs as deep as the red dirt", which wasn't based on anything
+            in the original source, while 4.5 tries to stay much more faithful to the original.
+          </p>
+          <p>Both of these are totally valid interpretations of the task "rewrite the following sentence to be better" - theres no 
+            specification of how many changes or what sort are allowed. So what's happening is that our benchmark is measuring some combination
+            of both how good the models are at rewriting, but also how they decide to evaluate the tradeoff between preserving
+            the original and taking more creative liberties.
+          </p>
+
+          <p>
+            I spent a while thinking about how one might try to solve this. "Amount of rewriting" is a very hard thing to specify.
+            One could do vector embeddings and try to score each model on how different they made the sentences, or create more specific 
+            prompts that tried to get the models to maintain some similarity metric.
+          </p>
+          <p>This seemed rather fraught however (there are so many types of similarity) so I ended up thinking the most
+            likely solution was to give the model a highly contrained task. For example, instead of asking "rewrite the sentence",
+            we could ask "change exactly 3 words in this sentence to make it better." With this setup, any differences in "amount of change"
+            would be gone and we would be left with some more pure metric (though one that leaves somewhat less room for differences).
+          </p>
+
+          <p>Heres what we get overall with this setup:</p>
+
+          <img src="model_ratios_threewords.png" alt="model scores for 3 word edits" />
+
+          <p>Theres a lot less variation (obviously since the sentences are changing less) but the Claude's are still winning out pretty substantially. 
+            Lets look at some specific rewrites again (added words are bolded):</p>
+
+
+        <table class="rewrites">
+            <tr>
+              <th>Original</th>
+              <th>Rewritten (Sonnet 3.7 - our three word edit winner)</th>
+            </tr>
+            <tr>
+              <td>Whatever suspicions we have about our narrator's mental health are accompanied by the increasing pause we're given about the ethics of his spiritual journey. <i>85/100</i></td>
+              <td>Whatever suspicions we <b>harbor</b> about our narrator's mental health are accompanied by the increasing <b>unease</b> we <b>experience</b> about the ethics of his spiritual journey. <i>85/100</i></td>
+            </tr>
+            <tr>
+              <td>It is too trite to say that this is a post-apocalyptic novel, though it certainly is. <i>75/100</i></td>
+              <td>It <b>feels</b> too trite to say that this is a post-apocalyptic novel, though it certainly is. <i>85/100</i></td>
+            </tr>
+            <tr>
+                <td>All of the names hold deeper meanings. <i>55/100</i></td>
+                <td><b>Every</b> name <b>cradles hidden</b> meanings. <i>75/100</i></td>
+              </tr>
+          </table>
+
+          <p>I kind of hate cradles here: it's definitely too far in the direction of purple prose for my taste. The first sentence
+            rewrite I rather like though: it replaces words with more specific and evocative ones than I do think improve the sentence.
+            It does seem highly likely however that Sonnet's good score comes substantially from its penchant for round numbers, making it
+            bump itself from 75% to 85% for a minor improvement.
+          </p>
+
+          <p>And below is our worst scoring model by far, gpt-5 (very strange how much worse it does than ones like o3!)</p>
+
+          <table class="rewrites">
+            <tr>
+              <th>Original</th>
+              <th>Rewritten (Sonnet 3.7 - our three word edit winner)</th>
+            </tr>
+            <tr>
+              <td>Whatever suspicions we have about our narrator's mental health are accompanied by the increasing pause we're given about the ethics of his spiritual journey. <i>39/100</i></td>
+              <td>Whatever suspicions we have about our narrator's mental health are accompanied by the increasing <b>doubt</b> about the ethics of his spiritual journey. <i>83/100</i></td>
+            </tr>
+            <tr>
+              <td>It is too trite to say that this is a post-apocalyptic novel, though it certainly is. <i>82/100</i></td>
+              <td>It is too trite to <b>call</b> this a post-apocalyptic novel, though it certainly is. <i>78/100</i></td>
+            </tr>
+            <tr>
+                <td>All of the names hold deeper meanings. <i>76/100</i></td>
+                <td>All the names <b>whisper</b> deeper meaning. <i>72/100</i></td>
+              </tr>
+          </table>
+
+          <p>I don't totally know what to make of these. They are highly functional edits: I do think doubt improves first the sentence
+            from a concision perspective, and similarly the second edit does feel like it improves the flow slightly, but overall
+            the edits don't feel like they do a lot. It's surprising to me though that gpt-5 dislikes its own edits so much. The second
+            sentence at leat seems like an improvement to me!
+          </p>
+
+        <p>Overall, this does feel like a more meaningful benchmark than the original. I certainly wouldn't go so far as to say that this is actually measuring taste. In the limit, a model that just absoltuely 
             loves the sound of its own voice and hates everything else would get a perfect score on this benchmark, but clearly wouldn't have good taste. In general though while this sort of self-preference could certainly be a factor, it feels like theres
             at least some real information to be gained from the differences here.
         </p>
