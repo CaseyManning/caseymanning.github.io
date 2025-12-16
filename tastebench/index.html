@@ -41,9 +41,9 @@
         <p>
             To start, I gathered a corpus of sentences for the models to work with. It was important to me that
             the sentences be "good" in some way, or at least very thoughtfully constructed, because if its trivial to write
-            an improved version, the benchmark doesnt tell us a lot. An example of this sort of sentence that came to mind for
+            an improved version, the benchmark doesn't tell us a lot. An example of this sort of sentence that came to mind for
             me was writing in literary magazines, especially reviews. The sentences are highly functional (vs. poetic fiction sentences or something), but people try pretty hard and 
-            have editors that make sure the sentences are basically okay. So i took a bunch of sentences from the reviews section of
+            have editors that make sure the sentences are basically okay. So I took a bunch of sentences from the reviews section of
             <a href="https://thediagram.com">The Diagram</a>, which I happen to like. I also filtered for sentences that were more than 10 words
             long, so theres enough material to work with, especially given that we aren't using the context of the surrounding sentences.
         </p>
@@ -82,7 +82,7 @@
         </div>
         <p>
             I imagine this sort of task is probably pretty sensitive to prompting, and I haven't spent a lot of time trying different versions,
-            but it felt like a simple "better" might be a bit too vague so i put in a few pointers.
+            but it felt like a simple "better" might be a bit too vague so I put in a few pointers.
         </p>
         <p>
             Then as described, we asked the models to rate their re-written sentences via the same prompt as the original, and 
@@ -215,14 +215,14 @@
               </tr>
           </table>
 
-          <p>I don't totally know what to make of these. They are highly functional edits: I do think doubt improves first the sentence
+          <p>I don't totally know what to make of these. They are highly functional edits: I do think doubt improves the first sentence
             from a concision perspective, and similarly the second edit does feel like it improves the flow slightly, but overall
             the edits don't feel like they do a lot. It's surprising to me though that gpt-5 dislikes its own edits so much. The second
-            sentence at leat seems like an improvement to me!
+            sentence at least seems like an improvement to me!
           </p>
 
         <p>Overall, this does feel like a more meaningful benchmark than the original. I certainly wouldn't go so far as to say that this is actually measuring taste. In the limit, a model that just absolutely 
-            loves the sound of its own voice and hates everything else would get a perfect score on this benchmark, but clearly wouldn't have good taste. In general though while this sort of self-preference could certainly be a factor, it feels like theres
+            loves the sound of its own voice and hates everything else would get a perfect score on this benchmark, but clearly wouldn't have good taste. In general though while this sort of self-preference could certainly be a factor, it feels like there's
             at least some real information to be gained from the differences here.
         </p>
 
