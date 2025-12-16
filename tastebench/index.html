@@ -89,7 +89,7 @@
             take the ratio of the new score to the old score, or how much better they like the rewritten sentence.
         </p>
         <img src="model_ratios.png" alt="Original ratings"/>
-        <p>I was suprised to see sonnet 4 have the highest score here by such a large margin, especially compared to sonnet 4.5. Let's look at some of its rewrites:</p>
+        <p>I was surprised to see sonnet 4 have the highest score here by such a large margin, especially compared to sonnet 4.5. Let's look at some of its rewrites:</p>
 
         <table class="rewrites">
             <tr>
@@ -115,7 +115,7 @@
             just once sentence, the impulse to make it flowery seems totally understandable.
         </p>
         <p>
-            Lets look at what 4.5 is doing to compare:
+            Let's look at what 4.5 is doing to compare:
         </p>
 
         <table class="rewrites">
@@ -156,17 +156,17 @@
             prompts that tried to get the models to maintain some similarity metric.
           </p>
           <p>This seemed rather fraught however (there are so many types of similarity) so I ended up thinking the most
-            likely solution was to give the model a highly contrained task. For example, instead of asking "rewrite the sentence",
+            likely solution was to give the model a highly constrained task. For example, instead of asking "rewrite the sentence",
             we could ask "change exactly 3 words in this sentence to make it better." With this setup, any differences in "amount of change"
             would be gone and we would be left with some more pure metric (though one that leaves somewhat less room for differences).
           </p>
 
-          <p>Heres what we get overall with this setup:</p>
+          <p>Here's what we get overall with this setup:</p>
 
           <img src="model_ratios_threewords.png" alt="model scores for 3 word edits" />
 
-          <p>Theres a lot less variation (obviously since the sentences are changing less) but the Claude's are still winning out pretty substantially. 
-            Lets look at some specific rewrites again (added words are bolded):</p>
+          <p>There's a lot less variation (obviously since the sentences are changing less) but the Claudes are still winning out pretty substantially. 
+            Let's look at some specific rewrites again (added words are bolded):</p>
 
 
         <table class="rewrites">
@@ -189,7 +189,7 @@
           </table>
 
           <p>I kind of hate cradles here: it's definitely too far in the direction of purple prose for my taste. The first sentence
-            rewrite I rather like though: it replaces words with more specific and evocative ones than I do think improve the sentence.
+            rewrite I rather like though: it replaces words with more specific and evocative ones that I do think improve the sentence.
             It does seem highly likely however that Sonnet's good score comes substantially from its penchant for round numbers, making it
             bump itself from 75% to 85% for a minor improvement.
           </p>
@@ -199,7 +199,7 @@
           <table class="rewrites">
             <tr>
               <th>Original</th>
-              <th>Rewritten (Sonnet 3.7 - our three word edit winner)</th>
+              <th>Rewritten (gpt-5)</th>
             </tr>
             <tr>
               <td>Whatever suspicions we have about our narrator's mental health are accompanied by the increasing pause we're given about the ethics of his spiritual journey. <i>39/100</i></td>
@@ -221,15 +221,15 @@
             sentence at leat seems like an improvement to me!
           </p>
 
-        <p>Overall, this does feel like a more meaningful benchmark than the original. I certainly wouldn't go so far as to say that this is actually measuring taste. In the limit, a model that just absoltuely 
+        <p>Overall, this does feel like a more meaningful benchmark than the original. I certainly wouldn't go so far as to say that this is actually measuring taste. In the limit, a model that just absolutely 
             loves the sound of its own voice and hates everything else would get a perfect score on this benchmark, but clearly wouldn't have good taste. In general though while this sort of self-preference could certainly be a factor, it feels like theres
             at least some real information to be gained from the differences here.
         </p>
 
         <p>
-            I'm also somewhat partial to the idea of "llms can write better when the have something to say." For these contextless sentences
+            I'm also somewhat partial to the idea of "llms can write better when they have something to say." For these contextless sentences
             they don't really have any attachment to the meaning of the sentence, so aren't going to perform as well as for a more goal-directed sentence.
-            I'm sure theres a version of this that could lean into this idea more. 
+            I'm sure there's a version of this that could lean into this idea more. 
             </p>
 
         <p>Awful vibe-coded source code is available <a href="https://github.com/CaseyManning/sentence-tastebench">here</a>.</p>
