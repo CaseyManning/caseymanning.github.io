@@ -1,134 +1,108 @@
-<!DOCTYPE html>
-<head>
-    <link rel="stylesheet" href="indexv2.css">
-    <script src="three.min.js"></script>
-    <script src="gltfloader.js"></script>
-    <script src="OrbitControls.js"></script>
-    <script src="keyboardstate.js"></script>
-</head>
-<body>
-    <div id="navbar">
-        <a id="name">Casey Manning</a>
-        <div id="nav">
-            <a href="portfolio.html">artwork</a>
-            <a href="Resume_CaseyManning.pdf">resume</a>
-            <a href="https://youtu.be/YZse5aZfZYY">demo reel</a>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>casey</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="topscreen">
+        <div id="container"></div>
+        <div class="outer">
+        <div class="container">
+            <div class="nav">
+                <a href="https://caseymanning.github.io/moments">moments</a>
+                <a href="https://are.na/casey-yyy">are.na</a>
+                <a href="/moments/pure-information">pure-information</a>
+                <a href="https://spaaace.itch.io/">itch.io</a>
+                <a href="/vibes/">vibes</a>
+                <!-- <a href="https://spaaace.itch.io/">itch.io</a> -->
+                <!-- <a href="https://github.com/CaseyManning">github</a> -->
+                <div style="position: relative;"><span id="emailbutton">contact</span><span id="email"></span></div>
+            </div>
+                <p>hello, i'm casey! i make software and art and games and writing and things like that. i live in san francisco. email me if you want to chat.
+                </p>
+                <div class="posts">
+                    <span>scroll for items ↓</span>
+                </div>
+        </div>
+        <canvas id="borderCanvas" width="1300" height="600"></canvas>
         </div>
     </div>
-    </div>
-    <div id="content">
-        <div style="height: 350px;"></div>
-        <p class="header">Recent Work</p>
-        <div class="projectsection">
-            <div class="photogrid">
-                <div class="photo1" style="box-shadow: none">
-                    <img src="tastebench/model_ratios.png">
-                </div>
-                <div class="photo5"  style="box-shadow: none">
-                    <img src="sentences.png" >
-                </div>
+    <div id="below">
+        <div class="item">
+            <div>
+                <a href="tastebench">Taste benchmark explorations</a>
+                <small>A writeup of some explorations of a simple benchmark for LLM writing abilities / "writing taste."</small>
             </div>
-            <p class="projecttitle">Taste benchmark explorations</p>
-            <p class="projectdesc">A writeup of some explorations of a simple benchmark for LLM writing abilities / "writing taste." Let me know if you have any thoughts or suggestions!</p>
-            <div class="projectlinks">
-                <a href="tastebench">view post</a>
-            </div>
+            <img src="tastebench/model_ratios.png" alt="Taste benchmark explorations">
         </div>
-        <div class="projectsection">
-            <div class="photogrid">
-                <div class="photo1">
-                    <img src="projectimages/gt1.png">
-                </div>
-                <div class="photo2">
-                    <img src="projectimages/gt2.png">
-                </div>
-                <div class="photo3">
-                    <img src="projectimages/gt3.png">
-                </div>
-                <div class="photo4">
-                    <img src="projectimages/gt4.png">
-                </div>
+        <div class="item">
+            <div>
+                <a href="https://spaaace.itch.io/trainride">A Long Train Ride</a>
+                <small>A short narrative mystery game about ghosts, train rides, and family. Developed on a team for CS247G at Stanford. I did gameplay programming, art, and dialogue.</small>
             </div>
-            <p class="projecttitle">A Long Train Ride</p>
-            <p class="projectdesc">A short narrative mystery game about ghosts, train rides, and family. Developed on a team for CS247G at Stanford. I was responsible for gameplay programming, art, and dialogue.</p>
-            <div class="projectlinks">
-                <a href="https://spaaace.itch.io/trainride">play it on itch</a>
-            </div>
+            <img src="projectimages/gt1.png" alt="A Long Train Ride">
+            <img src="projectimages/gt3.png" alt="A Long Train Ride">
         </div>
-        <p class="divider">~</p>
-        <!-- <div class="divider"></div> -->
-        <div class="projectsection">
-            <div class="photogrid">
-                <div class="photo1" style="box-shadow: none">
-                    <img src="projectimages/sm1.png">
-                </div>
-                <div class="photo5"  style="box-shadow: none">
-                    <img src="gliding.webp" >
-                </div>
+        <div class="item">
+            <div>
+                <a href="https://substacks.space">Substacks Map</a>
+                <small>visual mapping of newsletters on substack to understand writer communities and patterns. data is from 2022</small>
             </div>
-            <p class="projecttitle">Substacks Map</p>
-            <p class="projectdesc">substacks.space is a visual mapping of newsletters on substack.com created via web scraping. The map visualizes reccomendations between substacks and categorizes them with gpt-3 to understand writer communities and patterns.</p>
-            <div class="projectlinks">
-                <a href="https://substacks.space">view on substacks.space</a>
-            </div>
+            <img src="projectimages/sm1.png" alt="Substacks Map">
+            <img src="gliding.webp" alt="Substacks Map">
         </div>
-        <!-- <div class="divider"></div> -->
-        <p class="divider">~</p>
-        <div class="projectsection">
-            <div class="photogrid3">
-                <div class="photo31" style="box-shadow: none">
-                    <img src="phone2.webp">
-                </div>
-                <div class="photo32"  style="box-shadow: none">
-                    <img src="projectimages/vr2.webp" >
-                </div>
-                <div class="photo33"  style="box-shadow: none">
-                    <img src="passthrough.webp" >
-                </div>
+        <div class="item">
+            <div>
+                <a href="portfolio.html">3D Modelling & Animation</a>
+                <small>3D modelling and animation projects created with Blender.</small>
             </div>
-            <p class="projecttitle">VR Projects</p>
-            <p class="projectdesc">Created VR games and art pieces as part of ARTSTUDI169. Pictured: Short simulation game about calling the DMV on an old payphone, with tactile phone buttons. Game where you move around by pulling hair on someone's head (as in Ratatouille). Quest Passthrough experiment where you can create floating objects with your hands.</p>
-        </div>
-        <p class="divider">~</p>
-        <div class="projectsection">
-            <div class="photogrid3">
-                <div class="photo31" style="box-shadow: none">
-                    <img src="projectimages/gd1.png">
-                </div>
-                <div class="photo32"  style="box-shadow: none">
-                    <img src="projectimages/gd2.png">
-                </div>
-                <div class="photo33"  style="box-shadow: none">
-                    <img src="projectimages/gd3.png">
-                </div>
-            </div>
-            <p class="projecttitle">Other Game Development</p>
-            <p class="projectdesc">Variety of game development projects for game jams and other events. Games created in unity and 3D assets/animations created with Blender.</p>
-            <div class="projectlinks">
-                <a href="https://spaaace.itch.io/chimken">play chimken</a>
-                <a href="https://spaaace.itch.io/journey">play journey around my room</a>
-                <a href="https://spaaace.itch.io/bunny">play diggy bunny</a>
-            </div>
-        </div>
-        <p class="divider">~</p>
-        <div class="projectsection">
-            <div class="photogrid3">
-                <div class="photo31" style="box-shadow: none">
-                    <img src="images/therig_thumb.png">
-                </div>
-                <div class="photo32"  style="box-shadow: none">
-                    <img src="images/lifters_thumb.png">
-                </div>
-                <div class="photo33"  style="box-shadow: none">
-                    <img src="images/148Robot_thumb.png">
-                </div>
-            </div>
-            <p class="projecttitle">3D Modelling & Animation</p>
-            <!-- <p class="projectdesc">.</p> -->
-            <div class="projectlinks">
-                <a href="/portfolio.html">see full portfolio</a>
-            </div>
+            <img src="images/therig_thumb.png" alt="3D Modelling & Animation">
+            <img src="images/lifters_thumb.png" alt="3D Modelling & Animation">
         </div>
     </div>
-    <script src="indexgl.js"></script>
-</body>
+  </body>
+  <div id="images"></div>
+  <script>
+    document.getElementById("emailbutton").addEventListener("click", async function() {
+        const emailChars = ["c", "a", "s", "e", "y", "t", "m", "a", "n", "n", "i", "n", "g", "@", "g", "m", "a", "i", "l", ".", "c", "o", "m"];
+    //   document.getElementById("email").innerHTML = emailChars.join("");
+
+    document.getElementById("email").innerHTML = "";
+    for (const char of emailChars) {
+        document.getElementById("email").innerHTML += char;
+        await new Promise(resolve => setTimeout(resolve, 10));
+    }
+    });
+
+    const c = document.getElementById('borderCanvas');
+const ctx = c.getContext('2d');
+
+const jitter = n => (Math.random() - 0.5) * n;
+
+ctx.lineWidth = 3;
+ctx.strokeStyle = 'black';
+ctx.beginPath();
+
+const width = 1300;
+const height = 600;
+
+for (let t = 0; t <= width; t += 10) {
+  ctx.lineTo(t, 0 + jitter(2));
+}
+for (let t = 0; t <= height; t += 10) {
+  ctx.lineTo(width + jitter(2), t);
+}
+for (let t = width; t >= 0; t -= 10) {
+  ctx.lineTo(t, height + jitter(2));
+}
+for (let t = height; t >= 0; t -= 10) {
+  ctx.lineTo(0 + jitter(2), t);
+}
+
+ctx.stroke();
+  </script>
+  <script src="words.js"></script>
+</html>
