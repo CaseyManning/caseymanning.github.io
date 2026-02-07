@@ -151,9 +151,7 @@ function minDx(x) { }
 
 function updateTexts() {
     for (let i = 0; i < texts.length; i++) {
-        const x = texts[i].x;
-        const y = texts[i].y;
-
+        if (texts[i].el.style.opacity == 0) continue;
         const orig = words[i];
 
         let newText = "";
