@@ -81,19 +81,19 @@ var texts = []; // { el, x, y }
 const container = document.getElementById("container");
 
 window.addEventListener("load", async () => {
+    const fragment = document.createDocumentFragment();
     for (let i = 0; i < n; i++) {
         const span = document.createElement("span");
         span.textContent = words[i] + " ";
-        container.appendChild(span);
+        fragment.appendChild(span);
         texts.push({ el: span, x: 0, y: 0 });
     }
+    container.appendChild(fragment); // single DOM write
 
     if (document.fonts && document.fonts.ready) {
         await document.fonts.ready;
     }
-
     updatePositions();
-
 });
 
 function updatePositions() {
