@@ -106,17 +106,68 @@ function updatePositions() {
 
 window.addEventListener("resize", updatePositions);
 
-function updateOpacity() {
-    const radius = 100;          // base size of the circle-ish area
-    const sharpSmooth = 20;      // fast falloff side
-    const softSmooth = 20;       // slow falloff side
-    const skew = 0.8;            // how lopsided the shape is (0 = circle-ish)
+// Simple 2D value noise
+const _noiseP = new Uint8Array(512);
+(function() {
+    const p = new Uint8Array(256);
+    for (let i = 0; i < 256; i++) p[i] = i;
+    for (let i = 255; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [p[i], p[j]] = [p[j], p[i]];
+    }
+    _noiseP.set(p); _noiseP.set(p, 256);
+})();
+function _fade(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
+function _lerp(a, b, t) { return a + t * (b - a); }
+function _grad(hash, x, y) {
+    const h = hash & 3;
+    return ((h & 1) ? -x : x) + ((h & 2) ? -y : y);
+}
+function noise2d(x, y) {
+    const xi = Math.floor(x) & 255, yi = Math.floor(y) & 255;
+    const xf = x - Math.floor(x), yf = y - Math.floor(y);
+    const u = _fade(xf), v = _fade(yf);
+    const aa = _noiseP[_noiseP[xi] + yi], ab = _noiseP[_noiseP[xi] + yi + 1];
+    const ba = _noiseP[_noiseP[xi + 1] + yi], bb = _noiseP[_noiseP[xi + 1] + yi + 1];
+    return _lerp(
+        _lerp(_grad(aa, xf, yf), _grad(ba, xf - 1, yf), u),
+        _lerp(_grad(ab, xf, yf - 1), _grad(bb, xf - 1, yf - 1), u), v
+    );
+}
 
-    // Direction of the "soft / tapered" side (in radians)
-    // π/4 is 45° → diagonal down-right/up-left
-    const angle = Math.PI / 4;
-    const cosA = Math.cos(angle);
-    const sinA = Math.sin(angle);
+// Smoothed mouse velocity
+var velX = 0, velY = 0;
+var prevMouseX = mouseX, prevMouseY = mouseY;
+var lastTime = 0;
+
+function updateOpacity(time) {
+    const t = time * 0.001;
+    const dt = lastTime ? (time - lastTime) * 0.001 : 0.016;
+    lastTime = time;
+
+    // Smooth velocity with exponential decay
+    const rawVX = (mouseX - prevMouseX) / Math.max(dt, 0.001);
+    const rawVY = (mouseY - prevMouseY) / Math.max(dt, 0.001);
+    prevMouseX = mouseX; prevMouseY = mouseY;
+    const smoothing = Math.exp(-8 * dt);
+    velX = velX * smoothing + rawVX * (1 - smoothing);
+    velY = velY * smoothing + rawVY * (1 - smoothing);
+    const speed = Math.hypot(velX, velY);
+    const velAngle = Math.atan2(velY, velX);
+
+    // Orbiting sub-blobs
+    const subBlobs = [
+        { dist: 170, r: 160, speed: 0.3,  phase: 0 },
+        { dist: 185, r: 70, speed: -0.2, phase: 2.1 },
+        { dist: 160, r: 55, speed: 0.15, phase: 4.2 },
+    ];
+
+    // Animate base radius with noise
+    const baseRadius = 150 + 20 * noise2d(t * 0.3, 0.0) + 10 * noise2d(0.0, t * 0.5);
+    const smoothBase = 18;
+
+    // Velocity stretch factor
+    const stretch = Math.min(speed * 0.08, 40);
 
     for (let i = 0; i < texts.length; i++) {
         const x = texts[i].x;
@@ -124,25 +175,50 @@ function updateOpacity() {
 
         const dx = x - mouseX;
         const dy = y - mouseY;
-
-        // Basic radial distance
         const r = Math.hypot(dx, dy);
-
-        // Angle of this point relative to the mouse
         const theta = Math.atan2(dy, dx);
 
-        // How aligned we are with the "soft" direction:
-        //  1   → exactly along the soft direction
-        // -1   → exactly opposite (sharp side)
-        const directional = Math.cos(theta - angle);
+        const ct = Math.cos(theta), st = Math.sin(theta);
 
-        // Skew the distance: shorter radius on sharp side, longer on soft side
-        const adjustedDist = r * (1 + skew * directional);
+        // Low-order shape: big slow lobes that make it clearly non-circular
+        const lobeShape =
+              55 * noise2d(ct * 1.0 + t * 0.15, st * 1.0 - t * 0.12)   // 1-lobe warp
+            + 45 * noise2d(ct * 2.0 - t * 0.1 + 5.3, st * 2.0 + t * 0.18 + 8.1)  // 2-lobe
+            + 30 * noise2d(ct * 3.0 + t * 0.22 + 13.0, st * 3.0 - t * 0.08 + 21.0); // 3-lobe
 
-        // Pick different smoothness for soft vs sharp side
-        const smoothness = directional > 0 ? softSmooth : sharpSmooth;
+        // High-frequency detail on top
+        let detailNoise = 0, amp = 15, freq = 6;
+        for (let o = 0; o < 3; o++) {
+            detailNoise += amp * noise2d(ct * freq + t * (0.3 + o * 0.15) + o * 31.7,
+                                         st * freq - t * (0.25 + o * 0.1) + o * 17.3);
+            amp *= 0.5; freq *= 2;
+        }
+        const boundaryNoise = lobeShape + detailNoise;
 
-        const val = 1 / (1 + Math.exp((adjustedDist - radius) / smoothness));
+        // Velocity elongation: extend radius in direction of movement
+        const velDot = speed > 10 ? Math.cos(theta - velAngle) : 0;
+        const velBonus = Math.max(velDot, 0) * stretch;
+
+        const effectiveRadius = baseRadius + boundaryNoise + velBonus;
+
+        // Main blob contribution (sigmoid distance)
+        const mainVal = 1 / (1 + Math.exp((r - effectiveRadius) / smoothBase));
+
+        // Sub-blob contributions
+        let subVal = 0;
+        for (const blob of subBlobs) {
+            const bAngle = blob.phase + t * blob.speed;
+            const bx = mouseX + Math.cos(bAngle) * blob.dist;
+            const by = mouseY + Math.sin(bAngle) * blob.dist;
+            const bd = Math.hypot(x - bx, y - by);
+            const bTheta = Math.atan2(y - by, x - bx);
+            const bNoise = noise2d(Math.cos(bTheta) * 1.2 + t * 0.6 + blob.phase,
+                                   Math.sin(bTheta) * 1.2 - t * 0.4) * 15;
+            subVal = Math.max(subVal, 1 / (1 + Math.exp((bd - blob.r - bNoise) / 12)));
+        }
+
+        // Combine: soft union of main blob + sub-blobs
+        const val = Math.max(mainVal, subVal * 0.55);
         texts[i].el.style.opacity = val > 0.001 ? val : 0;
     }
 }
@@ -194,10 +270,13 @@ window.addEventListener("mousemove", (e) => {
             trail.pop();
         }
     }
-
-    requestAnimationFrame(updateOpacity);
 });
-requestAnimationFrame(updateOpacity);
+
+function animateLoop(time) {
+    updateOpacity(time);
+    requestAnimationFrame(animateLoop);
+}
+requestAnimationFrame(animateLoop);
 
 
 
