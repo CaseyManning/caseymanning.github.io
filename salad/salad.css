@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "coda";
+  src: url("/fonts/CMMCodaKMCustom-Proportional.woff");
+}
+
+@font-face {
+  font-family: "coda";
+  src: url("/fonts/CMMCodaKMCustom-ProportionalItalic.woff");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ibm";
+  src: url("/fonts/IBMPlexSans-VariableFont_wdth,wght.ttf");
+}
+
+body {
+  font-family: "ibm", sans-serif;
+  font-size: 16px;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#subtitle {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+#date {
+  color: #888;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+#container {
+  margin-top: 60px;
+  height: 100%;
+  padding: 20px;
+  padding-bottom: 80px;
+}
+
+#container {
+  max-width: 700px;
+  width: 100%;
+}
+
+#container > img {
+  max-width: 350px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#outer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+p,
+b {
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+b {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+
+img {
+  margin: 20px 0 5px 0;
+  border-radius: 3px;
+}
+
+.caption {
+  display: block;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 15px;
+  font-style: italic;
+  text-align: center;
+}
+
+ol {
+  padding-left: 25px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+ol > li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+a {
+  color: black;
+}

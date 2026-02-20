@@ -218,6 +218,7 @@
     #below > .item {
       flex-wrap: wrap;
       justify-content: start;
+      border: none;
     }
   }
 
