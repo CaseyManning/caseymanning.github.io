@@ -26,7 +26,7 @@ Next week, I want to
 - start reading a lot more (~15 hours maybe?)
 - bake something fun
 - take a bit of a gander at the job market more generally to see if there are things I feel excited about
-- make progress coming up with good projects to do. List many options, Maybe the goal for the end of the week will be to have concretely committed to a first project[^2].
+- make progress coming up with good projects to do. List many options. Maybe the goal for the end of the week will be to have concretely committed to a first project[^2].
 - write at least a brief retrospective on the Alliance. mainly regarding my relationship to it (I think I had this failure mode of repeatedly trying to convince myself to become more excited about things in a totally futile way), maybe also about project itself, but that seems less pressing.
 - prepare for a waymo technical interview
 
