@@ -6,7 +6,7 @@ date: 2026-04-02
 
 Welcome, friends, to the inaugural unemployment report!
 
-Today is my first day away from work. I spent most of it walking around, and then I went to a yoga class. I felt ill at ease the whole day walking around, as if I was the whole time trying to escape. At yoga, the guy talked to us about the beginning of the bhagavad gita. He described the central thesis as resisting inaction in the face of uncertainty. The character, arjuna, finds himself in a battlefield, where he will be complicit in the death of many people regardless of what he does next, but he cannot stop. Action is required of him anyways. We are told that the only way you lose yourself is through inaction[^1].
+Today is my first day away from work. I spent most of it walking around, and then I went to a yoga class. I felt ill at ease walking around, as if I was the whole time trying to escape. At yoga, the guy talked to us about the beginning of the bhagavad gita. He described the central thesis as resisting inaction in the face of uncertainty. The character, arjuna, finds himself in a battlefield, where he will be complicit in the death of many people regardless of what he does next, but he cannot stop. Action is required of him anyways. We are told that the only way you lose yourself is through inaction[^1].
 
 I am about to have a lot of time. The same amount of time, but no clear course to pursue in spending it. I hope to spend it really well, or at least well enough to do the things that I want to do and be an alive person in the world with hopes and dreams. To think of my life as more of a project.
 
