@@ -6,7 +6,7 @@ date: 2026-04-02
 
 Welcome, friends, to the inaugural unemployment report!
 
-Today is my first day away from work. I spent most of it walking around, and then I went to a yoga class. I felt ill at ease walking around, as if I was the whole time trying to escape. At yoga, the guy talked to us about the beginning of the bhagavad gita. He described the central thesis as resisting inaction in the face of uncertainty. The character, arjuna, finds himself in a battlefield, where he will be complicit in the death of many people regardless of what he does next, but he cannot stop. Action is required of him anyways. We are told that the only way you lose yourself is through inaction[^1].
+Today is my first day away from work. I spent most of it walking around, and then I went to a yoga class. I felt ill at ease walking, as if I was the whole time trying to escape. At yoga, the guy talked to us about the beginning of the bhagavad gita. He described the central thesis as resisting inaction in the face of uncertainty. The character, arjuna, finds himself in a battlefield, where he will be complicit in the death of many people regardless of what he does next, but he cannot stop. Action is required of him anyways. We are told that the only way you lose yourself is through inaction[^1].
 
 I am about to have a lot of time. The same amount of time, but no clear course to pursue in spending it. I hope to spend it really well, or at least well enough to do the things that I want to do and be an alive person in the world with hopes and dreams. To think of my life as more of a project.
 
@@ -19,7 +19,7 @@ I would like to do whatever is highest leverage for me at any given time. I thin
 This past week was my last week at my job. Main accomplishments include:
 - doing a bunch of really annoying offboarding tasks re: account management and 2fa for infinite cloud services and such
 - trying to have grace with my friends for being cold and emotionally distant with me after I said I was leaving, since I know it's downstream of them caring a lot about the work and thinking of me as important to it, which are both good things in the long run.
-- having broadly unproductive thoughts about my trajectory in the world, and tried to brace myself emotionally for changes, which are scary
+- having broadly unproductive thoughts about my trajectory in the world, and trying to think about the future
 
 Next week, I want to
 - spend a lot of time walking around
