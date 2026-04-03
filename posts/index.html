@@ -1,0 +1,82 @@
+---
+layout: default
+title: posts
+---
+
+<style>
+  .posts-outer {
+    display: flex;
+    justify-content: center;
+    padding: 50px 10px;
+  }
+
+  .posts-container {
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .posts-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .post-item {
+    border: 1px solid black;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: none;
+    color: black;
+  }
+
+  .post-item:hover {
+    background-color: #fafafa;
+  }
+
+  .post-item-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .post-item-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .post-item-excerpt {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .home-link {
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  @media (max-width: 768px) {
+    .post-item {
+      border: none;
+      padding: 20px 10px;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+</style>
+
+<div class="posts-outer">
+  <div class="posts-container">
+    <a class="home-link" href="/">← home</a>
+    <div class="posts-title">2026 unemployment zone</div>
+    {% for post in site.posts %}
+      <a class="post-item" href="{{ post.url }}">
+        <div class="post-item-title">{{ post.title }}</div>
+        <div class="post-item-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+        {% if post.excerpt %}
+          <div class="post-item-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</div>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+</div>

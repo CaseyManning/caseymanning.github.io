@@ -1,0 +1,12 @@
+title: casey
+permalink: /posts/:year/:month/:day/:title/
+
+exclude:
+  - Build
+  - TemplateData
+  - vibes
+  - threestuff
+  - sophia
+  - videos
+  - "*.mp4"
+  - "*.gltf"

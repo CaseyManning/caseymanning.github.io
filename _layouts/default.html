@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title | default: site.title }}</title>
+    <style>
+      @font-face {
+        font-family: "coda";
+        src: url("/fonts/CMMCodaKMCustom-Proportional.woff");
+      }
+      @font-face {
+        font-family: "coda";
+        src: url("/fonts/CMMCodaKMCustom-ProportionalItalic.woff");
+        font-style: italic;
+      }
+      @font-face {
+        font-family: "codamono";
+        src: url("/fonts/CMMCodaKMCustom-MonoSans.woff");
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "coda", sans-serif;
+        font-size: 18px;
+      }
+
+      a {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>
