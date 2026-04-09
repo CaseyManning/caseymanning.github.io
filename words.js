@@ -158,12 +158,13 @@ function updateOpacity(time) {
     // Orbiting sub-blobs
     const subBlobs = [
         { dist: 170, r: 160, speed: 0.3,  phase: 0 },
-        { dist: 185, r: 70, speed: -0.2, phase: 2.1 },
+        { dist: 285, r: 70, speed: -0.2, phase: 1.1 },
+        { dist: 185, r: 70, speed: -0.2, phase: 3.1 },
         { dist: 160, r: 55, speed: 0.15, phase: 4.2 },
     ];
 
     // Animate base radius with noise
-    const baseRadius = 150 + 20 * noise2d(t * 0.3, 0.0) + 10 * noise2d(0.0, t * 0.5);
+    const baseRadius = 250 + 50 * noise2d(t * 0.3, 0.0) + 10 * noise2d(0.0, t * 0.5);
     const smoothBase = 18;
 
     // Velocity stretch factor
@@ -184,7 +185,7 @@ function updateOpacity(time) {
         const lobeShape =
               55 * noise2d(ct * 1.0 + t * 0.15, st * 1.0 - t * 0.12)   // 1-lobe warp
             + 45 * noise2d(ct * 2.0 - t * 0.1 + 5.3, st * 2.0 + t * 0.18 + 8.1)  // 2-lobe
-            + 30 * noise2d(ct * 3.0 + t * 0.22 + 13.0, st * 3.0 - t * 0.08 + 21.0); // 3-lobe
+            + 130 * noise2d(ct * 3.0 + t * 0.22 + 13.0, st * 3.0 - t * 0.08 + 21.0); // 3-lobe
 
         // High-frequency detail on top
         let detailNoise = 0, amp = 15, freq = 6;
@@ -219,7 +220,7 @@ function updateOpacity(time) {
 
         // Combine: soft union of main blob + sub-blobs
         const val = Math.max(mainVal, subVal * 0.55);
-        texts[i].el.style.opacity = val > 0.001 ? val : 0;
+        texts[i].el.style.opacity = val > 0.1 ? val : 0.1;
     }
 }
 
@@ -259,18 +260,18 @@ function updateTexts() {
 const trail = [];
 let trail_add_ms = 0;
 
-window.addEventListener("mousemove", (e) => {
-    mouseX = e.pageX;
-    mouseY = e.pageY;
+// window.addEventListener("mousemove", (e) => {
+//     mouseX = e.pageX;
+//     mouseY = e.pageY;
 
-    if (Date.now() - trail_add_ms > 100) {
-        trail_add_ms = Date.now();
-        trail.unshift({ x: mouseX, y: mouseY });
-        if (trail.length > 5) {
-            trail.pop();
-        }
-    }
-});
+//     if (Date.now() - trail_add_ms > 100) {
+//         trail_add_ms = Date.now();
+//         trail.unshift({ x: mouseX, y: mouseY });
+//         if (trail.length > 5) {
+//             trail.pop();
+//         }
+//     }
+// });
 
 function animateLoop(time) {
     updateOpacity(time);
