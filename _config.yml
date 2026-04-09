@@ -4,9 +4,7 @@ permalink: /posts/:title/
 exclude:
   - Build
   - TemplateData
-  - vibes
   - threestuff
-  - sophia
   - videos
   - "*.mp4"
   - "*.gltf"
