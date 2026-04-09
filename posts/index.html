@@ -70,6 +70,7 @@ title: posts
     <a class="home-link" href="/">← home</a>
     <div class="posts-title">2026 unemployment zone</div>
     {% for post in site.posts %}
+      {% unless post.hidden %}
       <a class="post-item" href="{{ post.url }}">
         <div class="post-item-title">{{ post.title }}</div>
         <div class="post-item-date">{{ post.date | date: "%B %-d, %Y" }}</div>
@@ -77,6 +78,7 @@ title: posts
           <div class="post-item-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</div>
         {% endif %}
       </a>
+      {% endunless %}
     {% endfor %}
   </div>
 </div>
