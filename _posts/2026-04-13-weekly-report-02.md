@@ -29,7 +29,7 @@ Qualitatively, I felt pretty ineffective for most of the last week, I was someho
 
 **My two areas of focus for the next week:**
 
-- My dearest brother has proposed we follow [this course](https://cs336.stanford.edu/spring2025/) together, so I hope to make substantial progress on, if not finish, the first assignment[^3] (I have 2 weeks really if we follow the real course timing). I have very minimally started, and it has been pretty fun.
+- My dearest brother has proposed we follow [this course](https://cs336.stanford.edu/spring2025/) together, so I hope to make substantial progress on, if not finish, the first assignment[^3] (I have 2 weeks really if we follow the real course timing). I have very minimally started, and it has been pretty fun. Also it is probably good to understand how the world works.
 
 - The last day or two I have been working on a voice-controlled game to play around with llm interaction stuff, and hope to have a minimal playable prototype of some form by one week from now.
 
