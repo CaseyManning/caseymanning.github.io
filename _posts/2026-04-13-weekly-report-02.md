@@ -4,9 +4,9 @@ title: "Unemployment Council Weekly Report 02"
 date: 2026-04-13
 ---
 
-Hello, friends. Unemployment report week 2. Slightly late[^1].
+Hello, friends. Week 2 is upon us, slightly late[^1].
 
-Last week's goals:
+Last week's goals were:
 
 - *spend a lot of time walking around* - I didn't really do this. One needs to be in the right state of mind for walking, and I was somehow uncompelled. Unfortunate, but acceptable.
 
