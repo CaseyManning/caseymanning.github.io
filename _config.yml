@@ -5,6 +5,4 @@ exclude:
   - Build
   - TemplateData
   - threestuff
-  - videos
-  - "*.mp4"
   - "*.gltf"
