@@ -8,9 +8,8 @@
             <p id="title">an attempt at a very simple taste benchmark</p>
         </div>
         <p>
-          The following outlines a benchmark that hopefully measures in a very rough way if a language model is able to write "well."
-          Basically, we are going to be asking models to write sentences, and see how much they like their own sentences. In other words,
-          can they write well according to their own standards?
+          I've been trying to make benchmark that measures in a very rough way if a language model is able to write "well."
+          We are going to be asking models to write sentences and see how much they like their own sentences.
         </p>
         <p>
             This does two things: firstly, we hope LLM taste currently serves as a good approximation of human taste:
@@ -22,7 +21,7 @@
         </p>
 
         <p>
-            The idea here is we ask a model to both generate and discriminate for itself. In particular, we:
+            In particular, we:
         </p>
             <ul>
                 <li>Give it a human-written sentence, and ask it to score that sentence on writing quality</li>
@@ -33,14 +32,15 @@
         <p>
             If it thinks its own sentence is better, then it has some amount of internally coherent taste in the writing of
             this particular sentence. If it thinks its own attempted improvement has made the sentence worse, then clearly
-            something has gone wrong.
+            something has gone wrong. Rewriting is used as a task only because it gives a clear shape of a sentence to write
+            so that we can easily compare outputs.
         </p>
 
         <b> Methods, in more detail </b>
 
         <p>
             To start, I gathered a corpus of sentences for the models to work with. It was important to me that
-            the sentences be "good" in some way, or at least very thoughtfully constructed, because if its trivial to write
+            the sentences be "good" in some way, or at least very thoughtfully constructed, because if it's trivial to write
             an improved version, the benchmark doesn't tell us a lot. An example of this sort of sentence that came to mind for
             me was writing in literary magazines, especially reviews. The sentences are highly functional (vs. poetic fiction sentences or something), but people try pretty hard and 
             have editors that make sure the sentences are basically okay. So I took a bunch of sentences from the reviews section of
