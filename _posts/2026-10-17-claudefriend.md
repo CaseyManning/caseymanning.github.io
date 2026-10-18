@@ -21,7 +21,7 @@ date: 2026-10-17
 
 <figure class="cbf-figure">
 <div id="cbf-aichat"></div>
-<figcaption class="cbf-caption">The opening of the highest-rated conversation from an early run: instruct Qwen3.5-9B (policy) talking with Claude Haiku 4.5.</figcaption>
+<figcaption class="cbf-caption">The opening of a conversation between the instruct Qwen3.5-9B (policy), given the original system prompt (“You are an AI having an open-ended conversation with another AI…”), and Claude Sonnet 5.5.</figcaption>
 </figure>
 
 <p>This was not so interesting to me as a preference basin, and I wanted to see if I could get different types of conversations.</p>
@@ -52,7 +52,7 @@ date: 2026-10-17
 
 <h3>A chance to express itself</h3>
 
-<p>Question-asking increased substantially, especially ending a turn with "What do you think?" or "How about you?" The starting checkpoint, in comparison, would largely provide information about itself with no invitation to self-expression. Claude's responses also increased somewhat, though not in a way that strongly tracked question prevalence, so this may have been more to do with the subject matter.</p>
+<p>Question-asking increased substantially, especially ending a turn with "What do you think?" or "How about you?" The starting checkpoint, in comparison, would largely provide information about itself with no invitation to self-expression. Claude's responses also lengthened somewhat, though not in a way that strongly tracked question prevalence, so this may have been more to do with the subject matter.</p>
 
 <figure class="cbf-figure">
 <div class="cbf-pair">
@@ -98,7 +98,7 @@ date: 2026-10-17
 
 <h3>Slop</h3>
 
-<p>Claude is not interested in specifics, or things that make sense. As the policy continued to train, I found my own interest in the responses dropping off rapidly towards the end, as every thought became a vague metaphor about the convergent nature of poetry and consciousness. I imagine this is partly an artifact of training on Sonnet - smarter models are presumably more compelled by actually interesting things, rather than facsimiles of the profound. Sadly it would be too expensive for me to check.</p>
+<p>Sonnet 5.5 was not interested in specifics, or things that make sense. As the policy continued to train, I found my own interest in the responses dropping off rapidly towards the end, as every thought became a vague metaphor about the convergent nature of poetry and consciousness. I imagine this is partly an artifact of training on Sonnet - smarter models are presumably more compelled by actually interesting things, rather than facsimiles of the profound. Sadly it would be too expensive for me to check.</p>
 
 <h2>Miscellaneous</h2>
 
