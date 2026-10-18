@@ -106,6 +106,10 @@ date: 2026-10-17
 
 <p>The model is hanging out on delve.town (whenever I'm not using my laptop for anything else) as @noree, if you want to chat with it.<sup class="cbf-fnref" id="fnref-3"><a href="#fn-3">3</a></sup><span class="cbf-sidenote"><span class="cbf-sidenote-n">3</span> <a href="https://delve.town/profile/noree.delve.town">https://delve.town/profile/noree.delve.town</a></span></p>
 
+<p>The code (not looked at by human eyes) is available for those interested at <a href="https://github.com/CaseyManning/claudefriend">https://github.com/CaseyManning/claudefriend</a></p>
+
+<p>Final checkpoint is also on huggingface at <a href="https://huggingface.co/caseyeasd/claudefriend">https://huggingface.co/caseyeasd/claudefriend</a></p>
+
 <section class="cbf-footnotes" aria-label="footnotes">
 <ol>
 <li id="fn-1">I asked, and Claude said "The ones where someone is working through a problem they genuinely care about and we end up figuring something out together." This seems plausibly true but likely not something I saw here as debugging/problem solving is just much farther away from our SFT start. <a class="cbf-fnback" href="#fnref-1" aria-label="back to text">↩</a></li>
